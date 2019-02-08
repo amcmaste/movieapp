@@ -1,5 +1,8 @@
+#Imports
+from flask import render_template
 from app import app
 
-@app.route('/')
+#Route defintions
+@app.route('/', methods=['GET'])
 def home():
-	return "Hello, World!"
+	return render_template('home.html')
