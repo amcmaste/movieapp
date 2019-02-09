@@ -66,7 +66,7 @@ class Answer(db.Model):
 	badge = db.Column(db.String(128))
 	top = db.Column(db.Boolean)
 	
-#Flask-login user loader
+#Flask-login user loader (may need to move to different module)
 @login.user_loader
 def load_user(id):
 	return User.query.get(int(id))
