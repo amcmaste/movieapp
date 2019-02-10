@@ -1,0 +1,33 @@
+#navbar{
+  height: 5vh;
+}
+
+#footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
+  min-height: 40px;
+}
+
+#footer-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
+  min-height: 40px;
+}
+
+#navbar-search {
+  width: 50vw;
+}
+
+#widget {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
