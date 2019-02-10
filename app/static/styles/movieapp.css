@@ -1,8 +1,13 @@
+body {
+  overflow: hidden;
+}
+
 #navbar{
   height: 5vh;
 }
 
 #footer {
+  z-index: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,4 +35,34 @@
   justify-content: center;
   align-items: center;
   height: 90vh;
+  width: 100vw;
+}
+
+#about {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: 7vh;
+  height: 90vh;
+  width: 100vw;
+  padding: 40px;
+  max-width: 100%;
+}
+
+#about-header-text {
+  font: arial;
+  font-size: 2em;
+  margin: 40px;
+  margin-top: 15px;
+  margin-left: 0px;
+  color: rgb(46, 46, 46);
+  
+}
+
+#about-body-text {
+  font: arial;
+  font-size: 1em;
+  background-color: rgb(240, 245, 255);
+  color: rgb(46, 46, 46);
 }
