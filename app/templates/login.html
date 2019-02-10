@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block widget %}
+  <div id="widget" class="widget">
+    <div id="login" class="top-section">
+	  <div id="login-header" class="header-text container">
+	    <p id="login-header-text">LOGIN</p>
+	  </div>
+	  <div class="row">
+	    <div id="signup-form" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	      {{ wtf.quick_form(form, button_map={'submit':'primary'}) }}
+	    </div>
+	  </div>
+	</div>
+  </div>
+{% endblock %}
