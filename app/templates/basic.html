@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block widget %}
+  <div id="widget">
+    <div id="widget-wrapper">
+	  <div id="left-outer" class="container">
+	    {% block left %}{% endblock %}
+	  </div>
+	  <div id="right-outer" class="row">
+	    {% block right %}{% endblock %}
+	  </div>
+	</div>
+  </div>
+{% endblock %}
