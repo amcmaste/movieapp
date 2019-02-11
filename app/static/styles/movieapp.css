@@ -91,7 +91,7 @@ body {
   font: arial;
   font-size: 2em;
   margin: 40px;
-  margin-top: 15px;
+  margin-top: 0px;
   margin-left: 0px;
   color: rgb(46, 46, 46);
 }
@@ -101,5 +101,6 @@ body {
 }
 
 #left-inner {
-  
+  text-align: right;
+  padding-right: 40px;
 }
