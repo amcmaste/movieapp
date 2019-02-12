@@ -1,31 +1,63 @@
 {% extends "base.html" %}
 
 {% block widget %}
-  <div class="widget">
   
   {% if user %}
-	<div class="alert alert-success" role="alert">
-      The user is: {{  user.username  }}
-    </div>
+  <!--USER CONTAINER-->
+  <div class="outer-container">
+    <div class="header-container">
+	  <div class="header-left">
+	    <div class="header-left-text">
+		  <span>YOU</span>
+		</div>
+	  </div>
+	  <div class="header-right">
+	    <div class="header-right-text">
+		  <span>COLLAPSE</span><span class="glyphicon-glyphicon-arrow-down"></span>
+		</div>
+	  </div>
+	</div>
+	<div class="body-container">
+	  <div class="profile-photo">
+	    <img src="{{ url_for('static', filename='profile.png') }}" height="50" width="50">
+	  </div>
+	  <div class="profile-content">
+	    <div class="profile-username">
+		  <span></span><span></span>
+		</div>
+		<div class="profile-fav-movie">
+		  <span></span><span></span>
+		</div>
+		<div class="profile-join-date">
+		  <span></span><span></span>
+		</div>
+		<div class="profile-points">
+		  <span></span><span></span>
+		</div>
+	  </div>
+	  <div class="post-info">
+	  </div>
+	</div>
+  </div>
+  <!--END USER CONTAINER-->
   {% endif %}
   
   {% if movie %}
-	<div class="alert alert-info" role="alert">
-      The movie is: {{  movie.movie_title  }}
-    </div>
+  <!--MOVIE CONTAINER-->
+  
+  <!--END MOVIE CONTAINER-->
   {% endif %}
   
   {% if question %}
-	<div class="alert alert-warning" role="alert">
-      The question is: {{  question.question_text  }}
-    </div>
+  <!--QUESTION CONTAINER-->
+  
+  <!--END QUESTION CONTAINER-->
   {% endif %}
   
   {% if answer %}
-	<div class="alert alert-danger" role="alert">
-      The answer is: {{  answer.answer_text  }}
-    </div>
+  <!--ANSWER CONTAINER-->
+  
+  <!--END ANSWER CONTAINER-->
   {% endif %}
   
-  </div>
 {% endblock %}
