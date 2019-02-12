@@ -9,6 +9,15 @@ body {
   color: rgb(46, 46, 46);
 }
 
+.widget {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  width: 100vw;
+}
+
 .form-control {
   width: 50vw;
 }
@@ -64,15 +73,6 @@ body {
 
 #navbar-search {
   width: 50vw;
-}
-
-#widget {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 90vh;
-  width: 100vw;
 }
 
 #widget-wrapper {

@@ -2,6 +2,7 @@
 from flask import render_template
 from app import app
 from app.forms import LoginForm, SignupForm, ProfileForm, MovieForm, QuestionForm, AnswerForm
+from app.placeholders import User, Movie, Question, Answer
 
 #Route defintions
 @app.route('/', methods=['GET'])
@@ -37,3 +38,11 @@ def question():
 def answer():
 	answer = AnswerForm()
 	return render_template('addanswer.html', form=answer)
+	
+@app.route('/main', methods=['GET'])
+def main():
+	user = User
+	movie = Movie
+	question = Question
+	answer = Answer
+	return render_template('main.html', user=user, movie=movie, question=question, answer=answer)
