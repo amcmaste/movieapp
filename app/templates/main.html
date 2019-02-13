@@ -8,7 +8,7 @@
     <div class="header-container">
 	  <div class="header-left">
 	    <div class="header-left-text">
-		  <span>YOU</span>
+		  <span>ABOUT YOU</span>
 		</div>
 	  </div>
 	  <div class="header-right">
@@ -19,20 +19,23 @@
 	</div>
 	<div class="body-container">
 	  <div class="profile-photo">
-	    <img src="{{ url_for('static', filename='profile.png') }}" height="50" width="50">
+	    <img id="photo-img" src="{{ url_for('static', filename='profile.jpg') }}">
 	  </div>
 	  <div class="profile-content">
 	    <div class="profile-username">
-		  <span></span><span></span>
+		  <div class="profile-data-header">{{  user.username  }}</div>
 		</div>
 		<div class="profile-fav-movie">
-		  <span></span><span></span>
+		  <div class="profile-data-title">Favorite Movie: </div>
+		  <div class="profile-data-content">{{  user.fav_movie  }}</div>
 		</div>
 		<div class="profile-join-date">
-		  <span></span><span></span>
+		  <div class="profile-data-title">User Since: </div>
+		  <div class="profile-data-content">{{  user.join_datetime  }}</div>
 		</div>
 		<div class="profile-points">
-		  <span></span><span></span>
+		  <div class="profile-data-title">Points: </div>
+		  <div class="profile-data-content">{{  user.points  }}</div>
 		</div>
 	  </div>
 	  <div class="post-info">

@@ -135,7 +135,7 @@ body {
   grid-row-start: 1;
   grid-row-end: 2;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 1fr;
 }
 
@@ -156,7 +156,7 @@ body {
 
 .header-right {
   grid-column-start: 2;
-  grid-column-end: 5;
+  grid-column-end: 6;
   grid-row-start: 1;
   grid-row-end: 2;
   background-color: rgb(242, 244, 247);
@@ -186,33 +186,117 @@ body {
 }
 
 .body-container {
-  
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 5;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .profile-photo {
-  
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#photo-img {
+  height: 14vh;
+  width: 14vh;
 }
 
 .profile-content {
-  
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.profile-data-header {
+  font: arial;
+  font-size: 2em;
+  font-weight: bold;
+  color: rgb(46, 46, 46);
+}
+
+.profile-data-title {
+  font: arial;
+  font-size: 1em;
+  font-weight: bold;
+  color: rgb(65, 0, 80);
+}
+
+.profile-data-content {
+  font: arial;
+  font-size: 1em;
+  color: rgb(46, 46, 46);
+  padding-left: 15px;
 }
 
 .post-info {
-  
+  grid-column-start: 4;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 
 .profile-username {
-  
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
 }
 
 .profile-fav-movie {
-  
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
 }
 
 .profile-join-date {
-  
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
 }
 
 .profile-points {
-  
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
 }
