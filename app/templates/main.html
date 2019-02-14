@@ -24,6 +24,7 @@
 	  <div class="profile-content">
 	    <div class="profile-username">
 		  <div class="profile-data-header">{{  user.username  }}</div>
+		  <a id="edit-profile-link" href="{{ url_for('profile') }}" >Edit Profile</a>
 		</div>
 		<div class="profile-fav-movie">
 		  <div class="profile-data-title">Favorite Movie: </div>
@@ -36,6 +37,14 @@
 		<div class="profile-points">
 		  <div class="profile-data-title">Points: </div>
 		  <div class="profile-data-content">{{  user.points  }}</div>
+		</div>
+		<div id="add-button-panel">
+		  <a id="add-movie-button" role="button" href="{{ url_for('movie') }}" 
+		  class="btn btn-primary add-button">Add Movie</a>
+		  <a id="add-question-button" role="button" href="{{ url_for('question') }}" 
+		  class="btn btn-primary add-button">Add Question</a>
+		  <a id="add-answer-button add-button" role="button" href="{{ url_for('answer') }}" 
+		  class="btn btn-primary add-button">Add Answer</a>
 		</div>
 	  </div>
 	  <div class="post-info">

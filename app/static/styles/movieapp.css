@@ -103,6 +103,13 @@
   padding-right: 40px;
 }
 
+/* Basic Template - ALL CHILDREN - FORMS */
+
+#submit {
+  background-color: hsl(170, 100%, 30%);
+  border-color: hsl(170, 100%, 30%);
+}
+
 /* Basic Template - ABOUT */
 
 .text-well {
@@ -287,13 +294,42 @@
   align-items: flex-end;
 }
 
+/* Main Template - ABOUT YOU - PROFILE DATA - BUTTONS */
+
+#edit-profile-link {
+  padding-left: 6px;
+  padding-bottom: 6px;
+}
+
+#add-button-panel {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 6;
+  grid-row-end: 8;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.add-button {
+  margin-right: 5px;
+  background-color: hsl(170, 100%, 30%);
+  border-color: hsl(170, 100%, 30%);
+}
+
+.add-button:hover {
+  background-color: hsl(170, 100%, 30%);
+  border-color: hsl(170, 100%, 30%);
+}
+
 /* Main Template - ABOUT YOU - PROFILE DATA - DETAIL - CONTENT */
 
 .profile-data-header {
   font: arial;
   font-size: 2em;
   font-weight: bold;
-  color: rgb(0, 120, 100);
+  color: rgb(65, 0, 80);
 }
 
 .profile-data-title {
