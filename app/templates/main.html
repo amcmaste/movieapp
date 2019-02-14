@@ -4,7 +4,7 @@
 <div class="main-widget">
   {% if user %}
   <!--USER CONTAINER-->
-  <div class="outer-container">
+  <div class="outer-container" id="first-outer-container">
     <div class="header-container">
 	  <div class="header-left">
 	    <div class="header-left-text">
@@ -56,7 +56,49 @@
   
   {% if movie %}
   <!--MOVIE CONTAINER-->
-  
+  <div class="outer-container">
+    <div class="header-container">
+	  <div class="header-left">
+	    <div class="header-left-text">
+		  <span>MOVIE</span>
+		</div>
+	  </div>
+	  <div class="header-right">
+	    <div class="header-right-text">
+		  <span>COLLAPSE </span><div class="glyphicon glyphicon-circle-arrow-down gad"></div>
+		</div>
+	  </div>
+	</div>
+	<div class="body-container">
+	  <div class="movie-photo">
+	    <img id="movie-img" src="{{ url_for('static', filename='movie.jpg') }}">
+	  </div>
+	  <div class="movie-content">
+	    <div class="movie-title">
+		  <div class="movie-data-header">{{  movie.movie_title  }}</div>
+		  <a id="edit-movie-link" href="#" >Edit Movie</a>
+		</div>
+		<div class="movie-directed-by">
+		  <div class="movie-data-title">Favorite Movie: </div>
+		  <div class="movie-data-content">{{  movie.directed_by  }}</div>
+		</div>
+		<div class="movie-release-date">
+		  <div class="movie-data-title">User Since: </div>
+		  <div class="movie-data-content">{{  user.release_date  }}</div>
+		</div>
+		<div class="movie-points">
+		  <div class="movie-data-title">Points: </div>
+		  <div class="movie-data-content">{{  user.points  }}</div>
+		</div>
+		<div id="movie-button-panel">
+		  <a id="change-movie-button" role="button" href="#" 
+		  class="btn btn-primary change-button">Change Movie</a>
+		</div>
+	  </div>
+	  <div class="movie-recent-info">
+	  </div>
+	</div>
+  </div>
   <!--END MOVIE CONTAINER-->
   {% endif %}
   

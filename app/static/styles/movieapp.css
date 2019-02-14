@@ -135,12 +135,16 @@
 .outer-container {
   width: 96vw;
   height: auto;
-  margin-top: 7vh;
+  margin-top: 1vh;
   border: 3px solid rgb(65, 0, 80);
   border-radius: 5px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(4, 1fr);
+}
+
+#first-outer-container {
+  margin-top: 6.5vh;
 }
 
 /* Main Template - BOXES - HEADER */
@@ -349,6 +353,146 @@
 /* Main Template - ABOUT YOU - POST DATA */
 
 .post-info {
+  grid-column-start: 7;
+  grid-column-end: 11;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+/* Main Template - MOVIE */
+
+/* Main Template - MOVIE - MOVIE PHOTO */
+
+.movie-photo {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#movie-img {
+  max-width: 15vw;
+  max-height: 15vh;
+}
+
+/* Main Template - MOVIE - MOVIE DATA */
+
+.movie-content {
+  grid-column-start: 3;
+  grid-column-end: 7;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  padding-left: 5px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(8, 1fr);
+}
+
+/* Main Template - MOVIE - MOVIE DATA - DETAIL */
+
+.movie-title {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.movie-directed-by {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.movie-release-date {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.movie-points {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 5;
+  grid-row-end: 6;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+/* Main Template - MOVIE - MOVIE DATA - BUTTONS */
+
+#edit-movie-link {
+  padding-left: 6px;
+  padding-bottom: 6px;
+}
+
+#movie-button-panel {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 6;
+  grid-row-end: 8;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.change-button {
+  margin-right: 5px;
+  background-color: hsl(170, 100%, 30%);
+  border-color: hsl(170, 100%, 30%);
+}
+
+.change-button:hover {
+  background-color: hsl(170, 100%, 30%);
+  border-color: hsl(170, 100%, 30%);
+}
+
+/* Main Template - MOVIE - MOVIE DATA - DETAIL - CONTENT */
+
+.movie-data-header {
+  font: arial;
+  font-size: 2em;
+  font-weight: bold;
+  color: rgb(65, 0, 80);
+}
+
+.movie-data-title {
+  font: arial;
+  font-size: 1em;
+  font-weight: bold;
+  color: rgb(65, 0, 80);
+}
+
+.movie-data-content {
+  font: arial;
+  font-size: 1em;
+  color: rgb(46, 46, 46);
+  padding-left: 5px;
+}
+
+/* Main Template - MOVIE - RECENT MOVIE DATA */
+
+.movie-recent-info {
   grid-column-start: 7;
   grid-column-end: 11;
   grid-row-start: 1;
