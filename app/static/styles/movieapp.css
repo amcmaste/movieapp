@@ -214,6 +214,7 @@
   grid-row-end: 5;
   padding-top: 5px;
   padding-bottom: 5px;
+  min-height: 18vh;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: 1fr;
@@ -498,3 +499,6 @@
   grid-row-start: 1;
   grid-row-end: 2;
 }
+
+/* Main Template - QUESTIONS/ANSWERS - QUESTIONS */
+
