@@ -1,28 +1,10 @@
-/* Base Template CSS*/
-
-body {
-  overflow: hidden;
-}
-
-.text-well {
-  font: arial;
-  font-size: 1em;
-  background-color: rgb(242, 244, 247);
-  color: rgb(46, 46, 46);
-}
-
-.widget {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 90vh;
-  width: 100vw;
-}
+/* Base Template - MAIN */
 
 .form-control {
   width: 50vw;
 }
+
+/* Base Template - NAVBAR */
 
 #navbar {
   height: 5vh;
@@ -44,10 +26,15 @@ body {
   color: rgb(46, 46, 46);
 }
 
-
 #logo {
   color: rgb(242, 244, 247);
 }
+
+#navbar-search {
+  width: 50vw;
+}
+
+/* Base Template - FOOTER */
 
 #footer {
   z-index: 0;
@@ -73,8 +60,15 @@ body {
   color: rgb(242, 244, 247);
 }
 
-#navbar-search {
-  width: 50vw;
+/* Basic Template - MAIN */
+
+.widget {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  width: 100vw;
 }
 
 #widget-wrapper {
@@ -102,25 +96,38 @@ body {
   
 }
 
+/* Basic Template - ALL CHILDREN */
+
 #left-inner {
   text-align: right;
   padding-right: 40px;
 }
 
-/* Main Template CSS*/
+/* Basic Template - ABOUT */
+
+.text-well {
+  font: arial;
+  font-size: 1em;
+  background-color: rgb(242, 244, 247);
+  color: rgb(46, 46, 46);
+}
+
+/* Main Template - MAIN */
 
 .main-widget {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 180vh;
+  height: auto;
   width: 100vw;
 }
 
+/* Main Template - BOXES */
+
 .outer-container {
   width: 96vw;
-  height: 25vh;
+  height: auto;
   margin-top: 7vh;
   border: 3px solid rgb(65, 0, 80);
   border-radius: 5px;
@@ -129,43 +136,43 @@ body {
   grid-template-rows: repeat(4, 1fr);
 }
 
+/* Main Template - BOXES - HEADER */
+
 .header-container {
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 2;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(10, 1fr);
   grid-template-rows: 1fr;
 }
 
 .header-left {
   grid-column-start: 1;
-  grid-column-end: 2;
+  grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 2;
   background-color: rgb(65, 0, 80);
+  padding-bottom: 5px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-end;
-  padding-bottom: 2px;
-  padding-left: 6px;
-
 }
 
 .header-right {
-  grid-column-start: 2;
-  grid-column-end: 6;
+  grid-column-start: 3;
+  grid-column-end: 11;
   grid-row-start: 1;
   grid-row-end: 2;
   background-color: rgb(242, 244, 247);
+  padding-bottom: 5px;
+  padding-left: 5px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-end;
-  padding-bottom: 2px;
-  padding-left: 6px;
 }
 
 .header-left-text {
@@ -181,25 +188,33 @@ body {
   color: rgb(46, 46, 46);
 }
 
+/* Main Template - BOXES - HEADER - GLYPHICON */
+
 .gad {
   font-size: 0.8em;
 }
+
+/* Main Template - BOXES - BODY */
 
 .body-container {
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 5;
+  padding-top: 5px;
+  padding-bottom: 5px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(10, 1fr);
   grid-template-rows: 1fr;
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
+
+/* Main Template - ABOUT YOU */
+
+/* Main Template - ABOUT YOU - PROFILE PHOTO */
 
 .profile-photo {
   grid-column-start: 1;
-  grid-column-end: 2;
+  grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 2;
   display: flex;
@@ -209,25 +224,76 @@ body {
 }
 
 #photo-img {
-  height: 14vh;
-  width: 14vh;
+  max-width: 15vw;
+  max-height: 15vh;
 }
 
+/* Main Template - ABOUT YOU - PROFILE DATA */
+
 .profile-content {
-  grid-column-start: 2;
-  grid-column-end: 4;
+  grid-column-start: 3;
+  grid-column-end: 7;
   grid-row-start: 1;
   grid-row-end: 2;
+  padding-left: 5px;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(8, 1fr);
 }
+
+/* Main Template - ABOUT YOU - PROFILE DATA - DETAIL */
+
+.profile-username {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.profile-fav-movie {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.profile-join-date {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.profile-points {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 5;
+  grid-row-end: 6;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+/* Main Template - ABOUT YOU - PROFILE DATA - DETAIL - CONTENT */
 
 .profile-data-header {
   font: arial;
   font-size: 2em;
   font-weight: bold;
-  color: rgb(46, 46, 46);
+  color: rgb(0, 120, 100);
 }
 
 .profile-data-title {
@@ -241,62 +307,14 @@ body {
   font: arial;
   font-size: 1em;
   color: rgb(46, 46, 46);
-  padding-left: 15px;
+  padding-left: 5px;
 }
+
+/* Main Template - ABOUT YOU - POST DATA */
 
 .post-info {
-  grid-column-start: 4;
-  grid-column-end: 6;
+  grid-column-start: 7;
+  grid-column-end: 11;
   grid-row-start: 1;
   grid-row-end: 2;
-}
-
-.profile-username {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  padding-left: 10px;
-}
-
-.profile-fav-movie {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 2;
-  grid-row-end: 3;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  padding-left: 10px;
-}
-
-.profile-join-date {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 3;
-  grid-row-end: 4;
-  text-align: left;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  padding-left: 10px;
-}
-
-.profile-points {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 4;
-  grid-row-end: 5;
-  text-align: left;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  padding-left: 10px;
 }
