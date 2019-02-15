@@ -147,8 +147,9 @@ body {
 
 .outer-container {
   width: 96%;
+  min-width: 800px;
   height: auto;
-  margin-top: 1.5%;
+  margin-top: 1.5vh;
   border: 3px solid rgb(65, 0, 80);
   border-radius: 5px;
   display: grid;
@@ -163,6 +164,7 @@ body {
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 2;
+  height: 50px;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: 1fr;
@@ -244,8 +246,8 @@ body {
 }
 
 #photo-img {
-  max-width: 15vw;
-  max-height: 15vh;
+  max-height: 140px;
+  max-width: 140px;
 }
 
 /* Main Template - ABOUT YOU - PROFILE DATA */
@@ -384,8 +386,8 @@ body {
 }
 
 #movie-img {
-  max-width: 15vw;
-  max-height: 15vh;
+  max-height: 140px;
+  max-width: 140px;
 }
 
 /* Main Template - MOVIE - MOVIE DATA */
@@ -466,7 +468,6 @@ body {
 }
 
 .change-button {
-  margin-right: 5px;
   background-color: hsl(170, 100%, 30%);
   border-color: hsl(170, 100%, 30%);
 }
