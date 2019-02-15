@@ -1,6 +1,7 @@
 /* Base Template - MAIN */
 body {
   width: 100vw;
+  max-width: 100%;
   min-width: 750px;
 }
 
