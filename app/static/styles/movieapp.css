@@ -1,6 +1,7 @@
 /* Base Template - MAIN */
 body {
   width: 100vw;
+  min-width: 750px;
 }
 
 .widget {
@@ -145,18 +146,14 @@ body {
 /* Main Template - BOXES */
 
 .outer-container {
-  width: 96vw;
+  width: 96%;
   height: auto;
-  margin-top: 1vh;
+  margin-top: 1.5%;
   border: 3px solid rgb(65, 0, 80);
   border-radius: 5px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(4, 1fr);
-}
-
-#first-outer-container {
-  margin-top: 6.5vh;
 }
 
 /* Main Template - BOXES - HEADER */
