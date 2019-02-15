@@ -10,6 +10,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: auto;
   padding-top: 50px;
   padding-bottom: 50px;
 }
@@ -132,17 +133,6 @@ body {
   color: rgb(46, 46, 46);
 }
 
-/* Main Template - MAIN */
-
-.main-widget {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  height: auto;
-  width: 100vw;
-}
-
 /* Main Template - BOXES */
 
 .outer-container {
@@ -225,6 +215,7 @@ body {
   grid-row-end: 5;
   padding-top: 5px;
   padding-bottom: 5px;
+  height: auto;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: 1fr;
@@ -510,4 +501,92 @@ body {
 }
 
 /* Main Template - QUESTIONS/ANSWERS - QUESTIONS */
+.question-specific-container {
+  grid-column-start: 1;
+  grid-column-end: 11;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  margin-top: 1.5vh;
+  margin-bottom: 1.5vh;
+  display: grid;
+  grid-template-columns: repeat(40, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
 
+.voting-points {
+  grid-column-start: 1;
+  grid-column-end: 7;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 1.0em;
+  color: rgb(46, 46, 46);
+}
+
+.upvote-arrow {
+  grid-column-start: 7;
+  grid-column-end: 9;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  padding-right: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  color: rgb(46, 46, 46);
+}
+
+.downvote-arrow {
+  grid-column-start: 7;
+  grid-column-end: 9;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  padding-right: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  color: rgb(46, 46, 46);
+}
+
+.question-content {
+  grid-column-start: 9;
+  grid-column-end: 40;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 1em;
+  background-color: hsl(170, 100%, 97%);
+  border: 3px solid hsl(170, 100%, 30%);
+  border-radius: 5px;
+}
+
+.points-variable {
+  font-size: 1.3em;
+  text-align: right;
+  color: rgb(46, 46, 46);
+}
+
+.question-variable {
+  color: rgb(46, 46, 46);
+}
+
+.gcau {
+  padding-bottom: 5px;
+  font-size: 2em;
+  color: rgb(65, 0, 80);
+}
+
+.gcad {
+  padding-top: 5px;
+  font-size: 2em;
+  color: rgb(65, 0, 80);
+}

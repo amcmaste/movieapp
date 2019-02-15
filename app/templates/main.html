@@ -12,7 +12,7 @@
 	  </div>
 	  <div class="header-right">
 	    <div class="header-right-text">
-		  <span>COLLAPSE </span><div class="glyphicon glyphicon-circle-arrow-down gad"></div>
+		  <span>COLLAPSE </span>
 		</div>
 	  </div>
 	</div>
@@ -64,7 +64,7 @@
 	  </div>
 	  <div class="header-right">
 	    <div class="header-right-text">
-		  <span>COLLAPSE </span><div class="glyphicon glyphicon-circle-arrow-down gad"></div>
+		  <span>COLLAPSE </span>
 		</div>
 	  </div>
 	</div>
@@ -82,12 +82,12 @@
 		  <div class="movie-data-content">{{  movie.directed_by  }}</div>
 		</div>
 		<div class="movie-release-date">
-		  <div class="movie-data-title">User Since: </div>
-		  <div class="movie-data-content">{{  user.release_date  }}</div>
+		  <div class="movie-data-title">Released on: </div>
+		  <div class="movie-data-content">{{  movie.release_date  }}</div>
 		</div>
 		<div class="movie-points">
 		  <div class="movie-data-title">Points: </div>
-		  <div class="movie-data-content">{{  user.points  }}</div>
+		  <div class="movie-data-content">{{  movie.points  }}</div>
 		</div>
 		<div id="movie-button-panel">
 		  <a id="change-movie-button" role="button" href="#" 
@@ -103,7 +103,42 @@
 
   {% if question %}
   <!--QUESTION CONTAINER-->
-  
+  <div class="outer-container">
+    <div class="header-container">
+	  <div class="header-left">
+	    <div class="header-left-text">
+		  <span>QUESTIONS</span>
+		</div>
+	  </div>
+	  <div class="header-right">
+	    <div class="header-right-text">
+		  <span>COLLAPSE </span>
+		</div>
+	  </div>
+	</div>
+	<div class="body-container">
+	  <div class="question-specific-container">
+		<div class="voting-points">
+		  <div class="points-variable">
+		    {{  question.points  }} points
+		  </div>
+		</div>
+		<div class="upvote-arrow">
+		  <div class="glyphicon glyphicon-circle-arrow-up gcau">
+		  </div>
+		</div>
+		<div class="downvote-arrow">
+		  <div class="glyphicon glyphicon-circle-arrow-down gcad">
+		  </div>
+		</div>
+		<div class="question-content">
+		  <div class="question-variable">
+		    {{  question.question_text }}
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </div>
   <!--END QUESTION CONTAINER-->
   {% endif %}
   
