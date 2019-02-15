@@ -575,6 +575,11 @@ body {
   justify-content: center;
   align-items: flex-start;
   font-size: 1em;
+  border: 1.3px dotted rgb(200, 200, 200);
+  border-radius: 5px;
+}
+
+#featured-content {
   background-color: hsl(170, 100%, 97%);
   border: 3px solid hsl(170, 100%, 30%);
   border-radius: 5px;
