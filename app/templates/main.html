@@ -3,7 +3,7 @@
 {% block widget %}
   {% if user %}
   <!--USER CONTAINER-->
-  <div class="outer-container">
+  <div id="user-container" class="outer-container">
     <div class="header-container">
 	  <div class="header-left">
 	    <div class="header-left-text">
@@ -101,7 +101,7 @@
   <!--END MOVIE CONTAINER-->
   {% endif %}
 
-  {% if question %}
+  {% if questions %}
   <!--QUESTION CONTAINER-->
   <div class="outer-container">
     <div class="header-container">
@@ -116,35 +116,250 @@
 		</div>
 	  </div>
 	</div>
-	<div class="body-container">
-	  <div class="question-specific-container">
-		<div class="voting-points">
-		  <div class="points-variable">
-		    {{  question.points  }} points
+	<div id="question-body-container">
+	  {% if question_one %}
+	    <div class="question-specific-container">
+		  <div class="voting-points">
+		    <div class="points-variable">
+		      {{  question_one.points  }} points
+		    </div>
 		  </div>
-		</div>
-		<div class="upvote-arrow">
-		  <div class="glyphicon glyphicon-circle-arrow-up gcau">
+		  <div class="upvote-arrow">
+		    <div class="glyphicon glyphicon-circle-arrow-up gcau">
+		    </div>
 		  </div>
-		</div>
-		<div class="downvote-arrow">
-		  <div class="glyphicon glyphicon-circle-arrow-down gcad">
+		  <div class="downvote-arrow">
+		    <div class="glyphicon glyphicon-circle-arrow-down gcad">
+		    </div>
 		  </div>
-		</div>
-		<div class="question-content">
-		  <div class="question-variable">
-		    {{  question.question_text }}
+		  <div class="question-content">
+		    <div class="question-variable">
+		      {{  question_one.question_text }}
+		    </div>
 		  </div>
-		</div>
-	  </div>
+	    </div>
+      {% endif %}
+      {% if question_two %}
+	    <div class="question-specific-container">
+		  <div class="voting-points">
+		    <div class="points-variable">
+		      {{  question_two.points  }} points
+		    </div>
+		  </div>
+		  <div class="upvote-arrow">
+		    <div class="glyphicon glyphicon-circle-arrow-up gcau">
+		    </div>
+		  </div>
+		  <div class="downvote-arrow">
+		    <div class="glyphicon glyphicon-circle-arrow-down gcad">
+		    </div>
+		  </div>
+		  <div class="question-content">
+		    <div class="question-variable">
+		      {{  question_two.question_text }}
+		    </div>
+		  </div>
+	    </div>
+      {% endif %}
+	  {% if question_three %}
+	    <div class="question-specific-container">
+		  <div class="voting-points">
+		    <div class="points-variable">
+		      {{  question_three.points  }} points
+		    </div>
+		  </div>
+		  <div class="upvote-arrow">
+		    <div class="glyphicon glyphicon-circle-arrow-up gcau">
+		    </div>
+		  </div>
+		  <div class="downvote-arrow">
+		    <div class="glyphicon glyphicon-circle-arrow-down gcad">
+		    </div>
+		  </div>
+		  <div class="question-content">
+		    <div class="question-variable">
+		      {{  question_three.question_text }}
+		    </div>
+		  </div>
+	    </div>
+      {% endif %}
+	  {% if question_four %}
+	    <div class="question-specific-container">
+		  <div class="voting-points">
+		    <div class="points-variable">
+		      {{  question_four.points  }} points
+		    </div>
+		  </div>
+		  <div class="upvote-arrow">
+		    <div class="glyphicon glyphicon-circle-arrow-up gcau">
+		    </div>
+		  </div>
+		  <div class="downvote-arrow">
+		    <div class="glyphicon glyphicon-circle-arrow-down gcad">
+		    </div>
+		  </div>
+		  <div class="question-content">
+		    <div class="question-variable">
+		      {{  question_four.question_text }}
+		    </div>
+		  </div>
+	    </div>
+      {% endif %}
+	  {% if question_five %}
+	    <div class="question-specific-container">
+		  <div class="voting-points">
+		    <div class="points-variable">
+		      {{  question_five.points  }} points
+		    </div>
+		  </div>
+		  <div class="upvote-arrow">
+		    <div class="glyphicon glyphicon-circle-arrow-up gcau">
+		    </div>
+		  </div>
+		  <div class="downvote-arrow">
+		    <div class="glyphicon glyphicon-circle-arrow-down gcad">
+		    </div>
+		  </div>
+		  <div class="question-content">
+		    <div class="question-variable">
+		      {{  question_five.question_text }}
+		    </div>
+		  </div>
+	    </div>
+      {% endif %}
 	</div>
   </div>
   <!--END QUESTION CONTAINER-->
   {% endif %}
   
-  {% if answer %}
+  {% if answers %}
   <!--ANSWER CONTAINER-->
-  
+  <div id="answer-container" class="outer-container">
+    <div class="header-container">
+	  <div class="header-left">
+	    <div class="header-left-text">
+		  <span>ANSWERS</span>
+		</div>
+	  </div>
+	  <div class="header-right">
+	    <div class="header-right-text">
+		  <span>COLLAPSE </span>
+		</div>
+	  </div>
+	</div>
+	<div id="question-body-container">
+	  {% if answer_one %}
+	    <div class="question-specific-container">
+		  <div class="voting-points">
+		    <div class="points-variable">
+		      {{  answer_one.points  }} points
+		    </div>
+		  </div>
+		  <div class="upvote-arrow">
+		    <div class="glyphicon glyphicon-circle-arrow-up gcau">
+		    </div>
+		  </div>
+		  <div class="downvote-arrow">
+		    <div class="glyphicon glyphicon-circle-arrow-down gcad">
+		    </div>
+		  </div>
+		  <div class="question-content">
+		    <div class="question-variable">
+		      {{  answer_one.answer_text }}
+		    </div>
+		  </div>
+	    </div>
+      {% endif %}
+      {% if answer_two %}
+	    <div class="question-specific-container">
+		  <div class="voting-points">
+		    <div class="points-variable">
+		      {{  answer_two.points  }} points
+		    </div>
+		  </div>
+		  <div class="upvote-arrow">
+		    <div class="glyphicon glyphicon-circle-arrow-up gcau">
+		    </div>
+		  </div>
+		  <div class="downvote-arrow">
+		    <div class="glyphicon glyphicon-circle-arrow-down gcad">
+		    </div>
+		  </div>
+		  <div class="question-content">
+		    <div class="question-variable">
+		      {{  answer_two.answer_text }}
+		    </div>
+		  </div>
+	    </div>
+      {% endif %}
+	  {% if answer_three %}
+	    <div class="question-specific-container">
+		  <div class="voting-points">
+		    <div class="points-variable">
+		      {{  answer_three.points  }} points
+		    </div>
+		  </div>
+		  <div class="upvote-arrow">
+		    <div class="glyphicon glyphicon-circle-arrow-up gcau">
+		    </div>
+		  </div>
+		  <div class="downvote-arrow">
+		    <div class="glyphicon glyphicon-circle-arrow-down gcad">
+		    </div>
+		  </div>
+		  <div class="question-content">
+		    <div class="question-variable">
+		      {{  answer_three.answer_text }}
+		    </div>
+		  </div>
+	    </div>
+      {% endif %}
+	  {% if answer_four %}
+	    <div class="question-specific-container">
+		  <div class="voting-points">
+		    <div class="points-variable">
+		      {{  answer_four.points  }} points
+		    </div>
+		  </div>
+		  <div class="upvote-arrow">
+		    <div class="glyphicon glyphicon-circle-arrow-up gcau">
+		    </div>
+		  </div>
+		  <div class="downvote-arrow">
+		    <div class="glyphicon glyphicon-circle-arrow-down gcad">
+		    </div>
+		  </div>
+		  <div class="question-content">
+		    <div class="question-variable">
+		      {{  answer_four.answer_text }}
+		    </div>
+		  </div>
+	    </div>
+      {% endif %}
+	  {% if answer_five %}
+	    <div class="question-specific-container">
+		  <div class="voting-points">
+		    <div class="points-variable">
+		      {{  answer_five.points  }} points
+		    </div>
+		  </div>
+		  <div class="upvote-arrow">
+		    <div class="glyphicon glyphicon-circle-arrow-up gcau">
+		    </div>
+		  </div>
+		  <div class="downvote-arrow">
+		    <div class="glyphicon glyphicon-circle-arrow-down gcad">
+		    </div>
+		  </div>
+		  <div class="question-content">
+		    <div class="question-variable">
+		      {{  answer_five.answer_text }}
+		    </div>
+		  </div>
+	    </div>
+      {% endif %}
+	</div>
+  </div>
   <!--END ANSWER CONTAINER-->
   {% endif %}
 {% endblock %}

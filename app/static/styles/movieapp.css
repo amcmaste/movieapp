@@ -139,13 +139,22 @@ body {
   width: 96%;
   min-width: 800px;
   height: auto;
-  margin-top: 1.5vh;
+  margin-top: 5px;
+  margin-bottom: 5px;
   border: 3px solid rgb(65, 0, 80);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+}
+
+#user-container {
+  margin-top: 20px;
+}
+
+#answer-container {
+  margin-bottom: 20px;
 }
 
 /* Main Template - BOXES - HEADER */
@@ -215,8 +224,6 @@ body {
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: 1fr;
 }
-
-/* Main Template - ABOUT YOU */
 
 /* Main Template - ABOUT YOU - PROFILE PHOTO */
 
@@ -495,11 +502,19 @@ body {
 
 /* Main Template - QUESTIONS/ANSWERS - QUESTIONS */
 
+#question-body-container {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  height: auto;
+  width: 100%;
+  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .question-specific-container {
-  grid-column-start: 1;
-  grid-column-end: 11;
-  grid-row-start: 1;
-  grid-row-end: 2;
   height: auto;
   width: 100%;
   margin-top: 5px;
@@ -576,13 +591,13 @@ body {
 }
 
 .gcau {
-  padding-bottom: 5px;
+  padding-bottom: 3px;
   font-size: 1.6em;
   color: rgb(65, 0, 80);
 }
 
 .gcad {
-  padding-top: 5px;
+  padding-top: 3px;
   font-size: 1.6em;
   color: rgb(65, 0, 80);
 }
