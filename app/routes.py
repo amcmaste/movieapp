@@ -4,8 +4,7 @@ from flask_login import current_user, login_user
 from app import app
 from app.forms import LoginForm, SignupForm, ProfileForm, MovieForm, QuestionForm, AnswerForm
 from app.functions import write_user, write_profile, write_movie, write_question, write_answer
-from app.models import User
-from app.placeholders import Movie, User_Placeholder, Question_One, Question_Two, Question_Three, Question_Four, Question_Five, Answer_One, Answer_Two, Answer_Three, Answer_Four, Answer_Five
+from app.models import User, Movie, Question, Answer
 
 #Route defintions
 @app.route('/about', methods=['GET'])
@@ -40,25 +39,11 @@ def answer():
 @app.route('/', methods=['GET'])	
 @app.route('/main', methods=['GET'])
 def main():
-	temp_user = User_Placeholder
-	movie = Movie
-	questions = [Question_One, Question_Two, Question_Three, Question_Four, Question_Five]
-	question_one = questions[0]
-	question_two = questions[1]
-	question_three = questions[2]
-	question_four = questions[3]
-	question_five = questions[4]
-	answers = [Answer_One, Answer_Two, Answer_Three, Answer_Four, Answer_Five]
-	answer_one = answers[0]
-	answer_two = answers[1]
-	answer_three = answers[2]
-	answer_four = answers[3]
-	answer_five = answers[4]
-	return render_template('main.html', temp_user=temp_user, movie=movie, questions=questions, 
-	question_one=question_one, question_two=question_two, question_three=question_three,
-	question_four=question_four, question_five=question_five, answers=answers, 
-	answer_one=answer_one, answer_two=answer_two, answer_three=answer_three, 
-	answer_four=answer_four, answer_five=answer_five)
+	user = User.query.filter_by(username='test').first()
+	movie = Movie.query.filter_by(movie_title='test').first()
+	question = Question.query.filter_by(question_text='test').first()
+	answer = Answer.query.filter_by(answer_text='test').first()
+	return render_template('main.html', user=user, movie=movie, question=question, answer=answer)
 
 #Views with database integration
 @app.route('/submit-user', methods=['GET', 'POST'])
