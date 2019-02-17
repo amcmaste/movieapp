@@ -40,7 +40,7 @@ def answer():
 @app.route('/', methods=['GET'])	
 @app.route('/main', methods=['GET'])
 def main():
-	user = User_Placeholder
+	temp_user = User_Placeholder
 	movie = Movie
 	questions = [Question_One, Question_Two, Question_Three, Question_Four, Question_Five]
 	question_one = questions[0]
@@ -54,7 +54,7 @@ def main():
 	answer_three = answers[2]
 	answer_four = answers[3]
 	answer_five = answers[4]
-	return render_template('main.html', user=user, movie=movie, questions=questions, 
+	return render_template('main.html', temp_user=temp_user, movie=movie, questions=questions, 
 	question_one=question_one, question_two=question_two, question_three=question_three,
 	question_four=question_four, question_five=question_five, answers=answers, 
 	answer_one=answer_one, answer_two=answer_two, answer_three=answer_three, 

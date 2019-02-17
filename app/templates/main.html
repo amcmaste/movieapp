@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block widget %}
-  {% if user %}
+  {% if current_user.is_authenticated %}
   <!--USER CONTAINER-->
   <div id="user-container" class="outer-container">
     <div class="header-container">
@@ -22,20 +22,20 @@
 	  </div>
 	  <div class="profile-content">
 	    <div class="profile-username">
-		  <div class="profile-data-header">{{  user.username  }}</div>
+		  <div class="profile-data-header">{{  temp_user.username  }}</div>
 		  <a id="edit-profile-link" href="{{ url_for('profile') }}" >Edit Profile</a>
 		</div>
 		<div class="profile-fav-movie">
 		  <div class="profile-data-title">Favorite Movie: </div>
-		  <div class="profile-data-content">{{  user.fav_movie  }}</div>
+		  <div class="profile-data-content">{{  temp_user.fav_movie  }}</div>
 		</div>
 		<div class="profile-join-date">
 		  <div class="profile-data-title">User Since: </div>
-		  <div class="profile-data-content">{{  user.join_datetime  }}</div>
+		  <div class="profile-data-content">{{  temp_user.join_datetime  }}</div>
 		</div>
 		<div class="profile-points">
 		  <div class="profile-data-title">Points: </div>
-		  <div class="profile-data-content">{{  user.points  }}</div>
+		  <div class="profile-data-content">{{  temp_user.points  }}</div>
 		</div>
 		<div id="add-button-panel">
 		  <a id="add-movie-button" role="button" href="{{ url_for('movie') }}" 
