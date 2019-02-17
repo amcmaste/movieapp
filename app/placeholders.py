@@ -1,6 +1,6 @@
 #Define placeholder objects to substitute for database calls (temporarily)
 
-class User(object):
+class User_Placeholder(object):
 	id = 101
 	username = 'user'
 	email = 'user@movieapp.com'

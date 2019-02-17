@@ -52,7 +52,7 @@ class Question(db.Model):
 	level = db.Column(db.Integer)
 	badge = db.Column(db.String(128))
 	top = db.Column(db.Boolean)
-	answers = db.relationship('Answer', backref='question_referenced_by_answer', lazy='dyanmic')
+	answers = db.relationship('Answer', backref='question_referenced_by_answer', lazy='dynamic')
 
 class Answer(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
@@ -66,7 +66,7 @@ class Answer(db.Model):
 	badge = db.Column(db.String(128))
 	top = db.Column(db.Boolean)
 	
-#Flask-login user loader (may need to move to different module)
+#Flask-Login User Loader Function
 @login.user_loader
 def load_user(id):
 	return User.query.get(int(id))
