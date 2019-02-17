@@ -35,5 +35,6 @@ class QuestionForm(FlaskForm):
 	
 class AnswerForm(FlaskForm):
 	title = StringField('Movie Title', id="title", validators=[DataRequired()])
+	question = TextAreaField('Question', id="question", validators=[DataRequired()])
 	answer = TextAreaField('Answer', id="answer", validators=[DataRequired()])
 	submit = SubmitField('Submit', id="submit")

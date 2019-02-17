@@ -5,6 +5,7 @@ $(document).ready(function() {
     $.ajax({
       data : {
         title : $('#title').val(),
+		question: $('#question').val(),
 		answer : $('#answer').val()
       },
       type : 'POST',

@@ -43,9 +43,10 @@ def write_question(title, text):
 	result = Question.query.filter_by(question_text=text).first()
 	return str(result.question_text)
 
-def write_answer(title, text):
-	title_number = Movie.query.filter_by(movie_title=title).first()
-	answer = Answer(movie_id=title_number, answer_text=text)
+def write_answer(title, question, text):
+	movie_number = Movie.query.filter_by(movie_title=title).first().id
+	question_number = Question.query.filter_by(question_text=question).first().id
+	answer = Answer(movie_id=int(movie_number),question_id=int(question_number), answer_text=text)
 	db.session.add(answer)
 	db.session.commit()
 	

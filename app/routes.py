@@ -83,7 +83,7 @@ def submit_question():
 	
 @app.route('/submit-answer', methods=['GET', 'POST'])
 def submit_answer():
-	confirmation = write_answer(request.form['title'], request.form['answer'])
+	confirmation = write_answer(request.form['title'], request.form['question'], request.form['answer'])
 	return confirmation
 	
 #Permission restricted views
