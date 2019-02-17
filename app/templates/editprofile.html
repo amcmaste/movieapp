@@ -10,3 +10,8 @@
     {{ wtf.quick_form(form, button_map={'submit':'primary'}) }}
   </div>
 {% endblock %}
+
+{% block scripts %}
+{{ super() }}
+  <script type=text/javascript src="{{ url_for('static', filename='edit_profile.js') }}"></script>
+{% endblock %}

@@ -3,7 +3,7 @@ from flask import render_template, request, redirect, url_for
 from flask_login import current_user, login_user
 from app import app
 from app.forms import LoginForm, SignupForm, ProfileForm, MovieForm, QuestionForm, AnswerForm
-from app.functions import write_user
+from app.functions import write_user, write_profile, write_movie, write_question, write_answer
 from app.models import User
 from app.placeholders import Movie, User_Placeholder, Question_One, Question_Two, Question_Three, Question_Four, Question_Five, Answer_One, Answer_Two, Answer_Three, Answer_Four, Answer_Five
 
@@ -66,6 +66,27 @@ def submit_user():
 	confirmation = write_user(request.form['username'], request.form['email'], request.form['pword'])
 	return confirmation
 
+@app.route('/modify-profile', methods=['GET', 'POST'])
+def modify_profile():
+	confirmation = write_profile(request.form['favorite'])
+	return confirmation
+	
+@app.route('/submit-movie', methods=['GET', 'POST'])
+def submit_movie():
+	confirmation = write_movie(request.form['title'])
+	return confirmation
+	
+@app.route('/submit-question', methods=['GET', 'POST'])
+def submit_question():
+	confirmation = write_question(request.form['title'], request.form['question'])
+	return confirmation
+	
+@app.route('/submit-answer', methods=['GET', 'POST'])
+def submit_answer():
+	confirmation = write_answer(request.form['title'], request.form['answer'])
+	return confirmation
+	
+#Permission restricted views
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 	

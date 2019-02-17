@@ -20,12 +20,12 @@ class SignupForm(FlaskForm):
 	
 class ProfileForm(FlaskForm):
 	favorite = StringField('Favorite Movie', id="favorite", validators=[DataRequired()])
-	profile = FileField('Profile Picture', id="profile", validators=[DataRequired()])
+	profile = FileField('Profile Picture', id="profile")
 	submit = SubmitField('Submit', id="submit")
 	
 class MovieForm(FlaskForm):
 	title = StringField('Movie Title', id="title", validators=[DataRequired()])
-	cover = FileField('Cover Image', id="cover", validators=[DataRequired()])
+	cover = FileField('Cover Image', id="cover")
 	submit = SubmitField('Submit', id="submit")
 
 class QuestionForm(FlaskForm):
@@ -35,5 +35,5 @@ class QuestionForm(FlaskForm):
 	
 class AnswerForm(FlaskForm):
 	title = StringField('Movie Title', id="title", validators=[DataRequired()])
-	answer = TextAreaField('Answer', id="question", validators=[DataRequired()])
+	answer = TextAreaField('Answer', id="answer", validators=[DataRequired()])
 	submit = SubmitField('Submit', id="submit")
