@@ -41,9 +41,9 @@ def answer():
 def main():
 	user = User.query.filter_by(username='test').first()
 	movie = Movie.query.filter_by(movie_title='test').first()
-	question = Question.query.filter_by(question_text='test').first()
-	answer = Answer.query.filter_by(answer_text='test').first()
-	return render_template('main.html', user=user, movie=movie, question=question, answer=answer)
+	questions = Question.query.filter_by(question_text='test').all()
+	answers = Answer.query.filter_by(answer_text='test').all()
+	return render_template('main.html', user=user, movie=movie, questions=questions, answers=answers)
 
 #Views with database integration
 @app.route('/submit-user', methods=['GET', 'POST'])

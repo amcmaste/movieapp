@@ -2,6 +2,7 @@
 
 {% block widget %}
   {% if current_user.is_authenticated %}
+  {% if user %}
   <!--USER CONTAINER-->
   <div id="user-container" class="outer-container">
     <div class="header-container">
@@ -52,6 +53,7 @@
   </div>
   <!--END USER CONTAINER-->
   {% endif %}
+  {% endif %}
   
   {% if movie %}
   <!--MOVIE CONTAINER-->
@@ -101,7 +103,7 @@
   <!--END MOVIE CONTAINER-->
   {% endif %}
 
-  {% if question %}
+  {% if questions %}
   <!--QUESTION CONTAINER-->
   <div class="outer-container">
     <div class="header-container">
@@ -117,11 +119,11 @@
 	  </div>
 	</div>
 	<div id="question-body-container">
-	  {% if question %}
+	  {% if questions[0] %}
 	    <div class="question-specific-container">
 		  <div class="voting-points">
 		    <div class="points-variable">
-		      {{  question.points  }} points
+		      {{  questions[0].points  }} points
 		    </div>
 		  </div>
 		  <div class="upvote-arrow">
@@ -134,16 +136,16 @@
 		  </div>
 		  <div class="question-content">
 		    <div class="question-variable">
-		      {{  question.question_text }}
+		      {{  questions[0].question_text }}
 		    </div>
 		  </div>
 	    </div>
       {% endif %}
-      {% if question %}
+      {% if questions[1] %}
 	    <div class="question-specific-container">
 		  <div class="voting-points">
 		    <div class="points-variable">
-		      {{  question.points  }} points
+		      {{  questions[1].points  }} points
 		    </div>
 		  </div>
 		  <div class="upvote-arrow">
@@ -156,16 +158,16 @@
 		  </div>
 		  <div id="featured-content" class="question-content">
 		    <div class="question-variable">
-		      {{  question.question_text }}
+		      {{  questions[1].question_text }}
 		    </div>
 		  </div>
 	    </div>
       {% endif %}
-	  {% if question %}
+	  {% if questions[2] %}
 	    <div class="question-specific-container">
 		  <div class="voting-points">
 		    <div class="points-variable">
-		      {{  question.points  }} points
+		      {{  questions[2].points  }} points
 		    </div>
 		  </div>
 		  <div class="upvote-arrow">
@@ -178,16 +180,16 @@
 		  </div>
 		  <div class="question-content">
 		    <div class="question-variable">
-		      {{  question.question_text }}
+		      {{  questions[2].question_text }}
 		    </div>
 		  </div>
 	    </div>
       {% endif %}
-	  {% if question %}
+	  {% if questions[3] %}
 	    <div class="question-specific-container">
 		  <div class="voting-points">
 		    <div class="points-variable">
-		      {{  question.points  }} points
+		      {{  questions[3].points  }} points
 		    </div>
 		  </div>
 		  <div class="upvote-arrow">
@@ -200,16 +202,16 @@
 		  </div>
 		  <div class="question-content">
 		    <div class="question-variable">
-		      {{  question.question_text }}
+		      {{  questions[3].question_text }}
 		    </div>
 		  </div>
 	    </div>
       {% endif %}
-	  {% if question %}
+	  {% if questions[4] %}
 	    <div class="question-specific-container">
 		  <div class="voting-points">
 		    <div class="points-variable">
-		      {{  question.points  }} points
+		      {{  questions[4].points  }} points
 		    </div>
 		  </div>
 		  <div class="upvote-arrow">
@@ -222,7 +224,7 @@
 		  </div>
 		  <div class="question-content">
 		    <div class="question-variable">
-		      {{  question.question_text }}
+		      {{  questions[4].question_text }}
 		    </div>
 		  </div>
 	    </div>
@@ -232,7 +234,7 @@
   <!--END QUESTION CONTAINER-->
   {% endif %}
   
-  {% if answer %}
+  {% if answers %}
   <!--ANSWER CONTAINER-->
   <div id="answer-container" class="outer-container">
     <div class="header-container">
@@ -248,11 +250,11 @@
 	  </div>
 	</div>
 	<div id="question-body-container">
-	  {% if answer %}
+	  {% if answers[0] %}
 	    <div class="question-specific-container">
 		  <div class="voting-points">
 		    <div class="points-variable">
-		      {{  answer.points  }} points
+		      {{  answers[0].points  }} points
 		    </div>
 		  </div>
 		  <div class="upvote-arrow">
@@ -265,16 +267,16 @@
 		  </div>
 		  <div class="question-content">
 		    <div class="question-variable">
-		      {{  answer.answer_text }}
+		      {{  answers[0].answer_text }}
 		    </div>
 		  </div>
 	    </div>
       {% endif %}
-      {% if answer %}
+      {% if answers[1] %}
 	    <div class="question-specific-container">
 		  <div class="voting-points">
 		    <div class="points-variable">
-		      {{  answer.points  }} points
+		      {{  answers[1].points  }} points
 		    </div>
 		  </div>
 		  <div class="upvote-arrow">
@@ -287,16 +289,16 @@
 		  </div>
 		  <div id="featured-content" class="question-content">
 		    <div class="question-variable">
-		      {{  answer.answer_text }}
+		      {{  answers[1].answer_text }}
 		    </div>
 		  </div>
 	    </div>
       {% endif %}
-	  {% if answer %}
+	  {% if answers[2] %}
 	    <div class="question-specific-container">
 		  <div class="voting-points">
 		    <div class="points-variable">
-		      {{  answer.points  }} points
+		      {{  answers[2].points  }} points
 		    </div>
 		  </div>
 		  <div class="upvote-arrow">
@@ -309,16 +311,16 @@
 		  </div>
 		  <div class="question-content">
 		    <div class="question-variable">
-		      {{  answer.answer_text }}
+		      {{  answers[2].answer_text }}
 		    </div>
 		  </div>
 	    </div>
       {% endif %}
-	  {% if answer %}
+	  {% if answers[3] %}
 	    <div class="question-specific-container">
 		  <div class="voting-points">
 		    <div class="points-variable">
-		      {{  answer.points  }} points
+		      {{  answers[3].points  }} points
 		    </div>
 		  </div>
 		  <div class="upvote-arrow">
@@ -331,16 +333,16 @@
 		  </div>
 		  <div class="question-content">
 		    <div class="question-variable">
-		      {{  answer.answer_text }}
+		      {{  answers[3].answer_text }}
 		    </div>
 		  </div>
 	    </div>
       {% endif %}
-	  {% if answer %}
+	  {% if answers[4] %}
 	    <div class="question-specific-container">
 		  <div class="voting-points">
 		    <div class="points-variable">
-		      {{  answer.points  }} points
+		      {{  answers[4].points  }} points
 		    </div>
 		  </div>
 		  <div class="upvote-arrow">
@@ -353,7 +355,7 @@
 		  </div>
 		  <div class="question-content">
 		    <div class="question-variable">
-		      {{  answer.answer_text }}
+		      {{  answers[4].answer_text }}
 		    </div>
 		  </div>
 	    </div>

@@ -17,7 +17,6 @@ def write_user(username, email, password):
 def write_profile(favorite):
 	user = User.query.filter_by(username=current_user.username).first()
 	user.favorite = favorite
-	db.session.add(user)
 	db.session.commit()
 	
 	#Verify that new entry exists
