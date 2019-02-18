@@ -65,7 +65,7 @@ class Answer(db.Model):
 	level = db.Column(db.Integer)
 	badge = db.Column(db.String(128))
 	top = db.Column(db.Boolean)
-	
+
 #Flask-Login User Loader Function
 @login.user_loader
 def load_user(id):
