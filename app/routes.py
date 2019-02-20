@@ -40,7 +40,7 @@ def answer():
 @app.route('/main', methods=['GET'])
 def main():
 	user = User.query.filter_by(username='test').first()
-	movie = Movie.query.filter_by(movie_title='test').first()
+	movie = Movie.query.search(u'test').limit(5).first() #SEARCH IMPLEMENTED
 	questions = Question.query.filter_by(question_text='test').all()
 	answers = Answer.query.filter_by(answer_text='test').all()
 	return render_template('main.html', user=user, movie=movie, questions=questions, answers=answers)
