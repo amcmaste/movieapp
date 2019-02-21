@@ -1,8 +1,8 @@
 {% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
 
 {% block widget %}
-  {% if current_user.is_authenticated %}
-  {% if user %}
+  {% if user and current_user.is_authenticated %}
   <!--USER CONTAINER-->
   <div id="user-container" class="outer-container">
     <div class="header-container">
@@ -53,6 +53,29 @@
   </div>
   <!--END USER CONTAINER-->
   {% endif %}
+  
+  {% if not user or not current_user.is_authenticated %}
+  <!--NO USER CONTAINER-->
+  <div class="outer-container">
+    <div class="header-container">
+	  <div class="header-left">
+	    <div class="header-left-text">
+		  <span>LOGIN</span>
+		</div>
+	  </div>
+	  <div class="header-right">
+	    <div class="header-right-text">
+		  <span>COLLAPSE </span>
+		</div>
+	  </div>
+	</div>
+	<div class="body-container">
+      <div id="right-inner" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        {{ wtf.quick_form(login, button_map={'submit':'primary'}) }}
+      </div>
+	</div>
+  </div>
+  <!--END NO USER CONTAINER-->
   {% endif %}
   
   {% if movie %}
@@ -101,6 +124,30 @@
 	</div>
   </div>
   <!--END MOVIE CONTAINER-->
+  {% endif %}
+  
+  {% if not movie %}
+  <!--NO MOVIE CONTAINER-->
+  <div class="outer-container">
+    <div class="header-container">
+	  <div class="header-left">
+	    <div class="header-left-text">
+		  <span>SELECT MOVIE</span>
+		</div>
+	  </div>
+	  <div class="header-right">
+	    <div class="header-right-text">
+		  <span>COLLAPSE </span>
+		</div>
+	  </div>
+	</div>
+	<div class="body-container">
+      <div id="right-inner" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        {{ wtf.quick_form(select, button_map={'submit':'primary'}) }}
+      </div>
+	</div>
+  </div>
+  <!--END NO MOVIE CONTAINER-->
   {% endif %}
 
   {% if questions %}

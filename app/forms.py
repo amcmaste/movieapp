@@ -18,6 +18,10 @@ class SignupForm(FlaskForm):
 	    EqualTo('password')])
 	submit = SubmitField('Submit', id="submit")
 	
+class SelectMovieForm(FlaskForm):
+	title = StringField('Movie Title', id="title", validators=[DataRequired()])
+	submit = SubmitField('Submit', id="submit")
+	
 class ProfileForm(FlaskForm):
 	favorite = StringField('Favorite Movie', id="favorite", validators=[DataRequired()])
 	profile = FileField('Profile Picture', id="profile")

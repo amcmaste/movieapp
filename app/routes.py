@@ -2,7 +2,7 @@
 from flask import render_template, request, redirect, url_for
 from flask_login import current_user, login_user
 from app import app
-from app.forms import LoginForm, SignupForm, ProfileForm, MovieForm, QuestionForm, AnswerForm
+from app.forms import LoginForm, SignupForm, ProfileForm, SelectMovieForm, MovieForm, QuestionForm, AnswerForm
 from app.functions import write_user, write_profile, write_movie, write_question, write_answer
 from app.models import User, Movie, Question, Answer
 
@@ -36,14 +36,23 @@ def answer():
 	answer = AnswerForm()
 	return render_template('addanswer.html', form=answer)
 
-@app.route('/', methods=['GET'])	
-@app.route('/main', methods=['GET'])
+@app.route('/', methods=['GET', 'POST'])	
+@app.route('/main', methods=['GET', 'POST'])
 def main():
-	user = User.query.filter_by(username='test').first()
-	movie = Movie.query.search(u'test').limit(5).first() #SEARCH IMPLEMENTED
-	questions = Question.query.filter_by(question_text='test').all()
-	answers = Answer.query.filter_by(answer_text='test').all()
-	return render_template('main.html', user=user, movie=movie, questions=questions, answers=answers)
+	login = LoginForm()
+	select = SelectMovieForm()
+	user = current_user
+	movie = ''
+	questions = ''
+	answers = ''
+	if login.validate_on_submit():
+		user = User.query.filter_by(username=login.username.data).first()
+		if user is None or not user.check_password(login.password.data):
+			return render_template('main.html', login=login, select=select, user=user, movie=movie, questions=questions, answers=answers)
+		else:
+			login_user(user)
+			return render_template('main.html', login=login, select=select, user=user, movie=movie, questions=questions, answers=answers)
+	return render_template('main.html', login=login, select=select, user=user, movie=movie, questions=questions, answers=answers)
 
 #Views with database integration
 @app.route('/submit-user', methods=['GET', 'POST'])
@@ -83,7 +92,7 @@ def login():
 	if form.validate_on_submit():
 		user = User.query.filter_by(username=form.username.data).first()
 		if user is None or not user.check_password(form.password.data):
-			return redirect(url_for('home'))
+			return redirect(url_for('login'))
 		else:
 			login_user(user)
 			return redirect(url_for('main'))
