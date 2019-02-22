@@ -19,7 +19,7 @@ bootstrap = Bootstrap(app)
 from app import routes, models
 
 #Initialize SQLAlchemy_searchable
-db.drop_all()
+# db.drop_all()
 db.configure_mappers()
 db.create_all()
 db.session.commit()
