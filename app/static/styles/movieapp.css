@@ -616,9 +616,22 @@ body {
 
 .question-variable {
   color: rgb(46, 46, 46);
+  text-decoration: none;
 }
 
-.question-variable:hover {
+.question-content:link {
+  text-decoration: none;
+}
+
+.question-content:visited {
+  text-decoration: none;
+}
+
+.question-content:hover {
+  text-decoration: none;
+}
+
+.question-content:active {
   text-decoration: none;
 }
 
