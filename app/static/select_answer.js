@@ -2,7 +2,7 @@ $('document').ready(function() {
 
   $('.answer-content').on('click', function(event) {
 	
-    let clicked = $(this).children('.question-number').text();
+    let clicked = $(this).children('.answer-number').text();
 	
 	$.ajax({
       data : {
@@ -12,12 +12,13 @@ $('document').ready(function() {
       url : '/select-answer'
     })
 	.done(function(response) {
-	  
+
       $('.answer-content').each(function(i, obj) {
 	  
-	    if ($(this).children('.question-number').text() == response[0][0].id) {
+	    if ($(this).children('.answer-number').text() == response[0].id) {
 		  
 		  $(this).addClass('featured-content');
+		  $(this).children('.question-variable').html(response[0].answer_text);
 		
 		} else {
 		  
@@ -26,7 +27,8 @@ $('document').ready(function() {
 		}
 	  
 	  });
-	
+	  
+
 	});
 	
   });

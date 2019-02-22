@@ -56,7 +56,7 @@
   
   {% if not user or not current_user.is_authenticated %}
   <!--NO USER CONTAINER-->
-  <div class="outer-container">
+  <div id="no-user-container" class="outer-container">
     <div class="header-container">
 	  <div class="header-left">
 	    <div class="header-left-text">
@@ -303,7 +303,7 @@
 		    <div id="a1-text" class="question-variable">
 		      TEXT
 		    </div>
-			<div id="a1-number" class="question-number hidden"></div>
+			<div id="a1-number" class="answer-number hidden"></div>
 		  </a>
 	    </div>
 	    <div id="a2-container" class="question-specific-container hidden">
@@ -324,7 +324,7 @@
 		    <div id="a2-text" class="question-variable">
 		      TEXT
 		    </div>
-			<div id="a2-number" class="question-number hidden"></div>
+			<div id="a2-number" class="answer-number hidden"></div>
 		  </a>
 	    </div>
 	    <div id="a3-container" class="question-specific-container hidden">
@@ -345,7 +345,7 @@
 		    <div id="q3-text" class="question-variable">
 		      TEXT
 		    </div>
-			<div id="a3-number" class="question-number hidden"></div>
+			<div id="a3-number" class="answer-number hidden"></div>
 		  </a>
 	    </div>
 	    <div id="a4-container" class="question-specific-container hidden">
@@ -366,7 +366,7 @@
 		    <div id="a4-text" class="question-variable">
 		      TEXT
 		    </div>
-			<div id="a4-number" class="question-number hidden"></div>
+			<div id="a4-number" class="answer-number hidden"></div>
 		  </a>
 	    </div>
 	    <div id="a5-container" class="question-specific-container hidden">
@@ -387,7 +387,7 @@
 		    <div id="a5-text" class="question-variable">
 		      TEXT
 		    </div>
-			<div id="a5-number" class="question-number hidden"></div>
+			<div id="a5-number" class="answer-number hidden"></div>
 		  </a>
 	    </div>
 	</div>

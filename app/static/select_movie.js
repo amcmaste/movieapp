@@ -30,7 +30,7 @@ $(document).ready(function() {
 	  
 	  if (response[1][0]) {
         $('#q1-container').removeClass('hidden');
-		$('#q1-content').addClass('featured-content');
+		// $('#q1-content').addClass('featured-content');
 		$('#q1-points').html(response[1][0].points);
 		$('#q1-text').html(response[1][0].shortened_text);
 		$('#q1-number').html(response[1][0].id);

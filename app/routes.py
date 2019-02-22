@@ -140,3 +140,15 @@ def select_question():
 	
 	#Return output
 	return jsonify([question_data, answer_data])
+	
+@app.route('/select-answer', methods=['GET'])
+def select_answer():
+	#Pull and package answers data
+	number = request.args.get('number')
+	answers = Answer.query.filter_by(id=number).limit(1).first()
+	if not isinstance(answers, list):
+	  answers = [answers]
+	answer_data = pack_answers(answers)
+	
+	#Return output
+	return jsonify(answer_data)

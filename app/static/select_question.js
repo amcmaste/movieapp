@@ -34,7 +34,7 @@ $('document').ready(function() {
 	  
 	  if (response[1][0]) {
         $('#a1-container').removeClass('hidden');
-		$('#a1-content').addClass('featured-content');
+		// $('#a1-content').addClass('featured-content');
 		$('#a1-points').html(response[1][0].points);
 		$('#a1-text').html(response[1][0].shortened_text);
 		$('#a1-number').html(response[1][0].id);
