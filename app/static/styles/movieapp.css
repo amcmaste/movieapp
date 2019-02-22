@@ -594,7 +594,7 @@ body {
   border-radius: 5px;
 }
 
-#featured-content {
+.featured-content {
   background-color: hsl(170, 100%, 97%);
   border: 3px solid hsl(170, 100%, 30%);
   border-radius: 5px;
