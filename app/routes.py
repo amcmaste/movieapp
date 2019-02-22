@@ -3,7 +3,7 @@ from flask import render_template, request, redirect, url_for, jsonify
 from flask_login import current_user, login_user
 from app import app
 from app.forms import LoginForm, SignupForm, ProfileForm, SelectMovieForm, MovieForm, QuestionForm, AnswerForm
-from app.functions import write_user, write_profile, write_movie, write_question, write_answer, pack_movie, pack_questions
+from app.functions import write_user, write_profile, write_movie, write_question, write_answer, pack_movie, pack_questions, pack_answers
 from app.models import User, Movie, Question, Answer
 
 #Route defintions
@@ -121,3 +121,22 @@ def select_movie():
 	
 	#Return output
 	return jsonify([movie_data, question_data])
+	
+@app.route('/select-question', methods=['GET'])
+def select_question():
+	#Pull and package question data
+	number = request.args.get('number')
+	questions = Question.query.filter_by(id=number).first()
+	if not isinstance(questions, list):
+	  questions = [questions]
+	question_data = pack_questions(questions)
+	
+	#Pull and package answers data
+	number = request.args.get('number')
+	answers = Answer.query.filter_by(question_id=number).order_by('points desc').limit(5).all()
+	if not isinstance(answers, list):
+	  answers = [answers]
+	answer_data = pack_answers(answers)
+	
+	#Return output
+	return jsonify([question_data, answer_data])

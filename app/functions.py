@@ -88,3 +88,26 @@ def pack_questions(questions):
 		}
 		output.append(packed)
 	return output
+	
+def pack_answers(answers):
+	output = []
+	for answer in answers:
+		if len(answer.answer_text) > 100:
+			shortened = answer.answer_text[0:99] + '...'
+		else:
+			shortened = answer.answer_text
+		packed = {
+			'id' : answer.id,
+			'user_id' : answer.user_id,
+			'movie_id' : answer.movie_id,
+			'question_id' : answer.question_id,
+			'answer_text' : answer.answer_text,
+			'shortened_text' : shortened,
+			'create_datetime' : answer.create_datetime,
+			'points' : answer.points,
+			'level' : answer.level,
+			'badge' : answer.badge,
+			'top' : answer.top
+		}
+		output.append(packed)
+	return output
