@@ -13,7 +13,19 @@ $('document').ready(function() {
     })
 	.done(function(response) {
 	  
-	  alert(response[0][0].question_text);
+      $('.question-content').each(function(i, obj) {
+	  
+	    if ($(this).children('.question-number').text() == response[0][0].id) {
+		  
+		  $(this).addClass('featured-content');
+		
+		} else {
+		  
+		  $(this).parent().addClass('hidden');
+		
+		}
+	  
+	  });
 	
 	});
 	
