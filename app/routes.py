@@ -1,5 +1,5 @@
 #Imports
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request, redirect, url_for, jsonify
 from flask_login import current_user, login_user
 from app import app
 from app.forms import LoginForm, SignupForm, ProfileForm, SelectMovieForm, MovieForm, QuestionForm, AnswerForm
@@ -106,3 +106,9 @@ def main():
 	#Initial render
 	return render_template('main.html', login=login, select=select, user=user, movie=movie, questions=questions, answers=answers)
 
+#Select Movie helper function
+@app.route('/select-movie', methods=['GET'])
+def select_movie():
+	title = request.args.get('title')
+	movie = Movie.query.search(title).limit(1).first()
+	return str(movie.movie_title)

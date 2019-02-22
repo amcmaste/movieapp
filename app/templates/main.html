@@ -412,3 +412,8 @@
   <!--END ANSWER CONTAINER-->
   {% endif %}
 {% endblock %}
+
+{% block scripts %}
+{{ super() }}
+  <script type=text/javascript src="{{ url_for('static', filename='select_movie.js') }}"></script>
+{% endblock %}
