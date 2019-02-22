@@ -594,10 +594,18 @@ body {
   border-radius: 5px;
 }
 
+.question-content:hover {
+  text-decoration:none;
+}
+
 .featured-content {
   background-color: hsl(170, 100%, 97%);
   border: 3px solid hsl(170, 100%, 30%);
   border-radius: 5px;
+}
+
+.featured-content:hover {
+  text-decoration: none;
 }
 
 .points-variable {
@@ -608,6 +616,10 @@ body {
 
 .question-variable {
   color: rgb(46, 46, 46);
+}
+
+.question-variable:hover {
+  text-decoration: none;
 }
 
 .gcau {

@@ -70,11 +70,16 @@ def pack_movie(movie):
 def pack_questions(questions):
 	output = []
 	for question in questions:
+		if len(question.question_text) > 100:
+			shortened = question.question_text[0:99] + '...'
+		else:
+			shortened = question.question_text
 		packed = {
 			'id' : question.id,
 			'user_id' : question.user_id,
 			'movie_id' : question.movie_id,
 			'question_text' : question.question_text,
+			'shortened_text' : shortened,
 			'create_datetime' : question.create_datetime,
 			'points' : question.points,
 			'level' : question.level,
