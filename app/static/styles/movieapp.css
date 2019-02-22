@@ -123,6 +123,19 @@ body {
 #submit {
   background-color: hsl(170, 100%, 30%);
   border-color: hsl(170, 100%, 30%);
+  color: white;
+}
+
+#login-submit {
+  background-color: hsl(170, 100%, 30%);
+  border-color: hsl(170, 100%, 30%);
+  color: white;
+}
+
+#movie-submit {
+  background-color: hsl(170, 100%, 30%);
+  border-color: hsl(170, 100%, 30%);
+  color: white;
 }
 
 /* Basic Template - ABOUT */
@@ -608,3 +621,6 @@ body {
   font-size: 1.6em;
   color: rgb(65, 0, 80);
 }
+
+/* Responsive Behavior for MAIN */
+

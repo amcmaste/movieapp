@@ -8,7 +8,7 @@ from wtforms.fields.html5 import EmailField
 class LoginForm(FlaskForm):
 	username = StringField('Username', id="username", validators=[DataRequired()])
 	password = PasswordField('Password', id="password", validators=[DataRequired()])
-	submit = SubmitField('Submit', id="submit")
+	login_submit = SubmitField('Submit', id="login-submit")
 	
 class SignupForm(FlaskForm):
 	username = StringField('Username', id="username", validators=[DataRequired()])
@@ -20,7 +20,7 @@ class SignupForm(FlaskForm):
 	
 class SelectMovieForm(FlaskForm):
 	title = StringField('Movie Title', id="title", validators=[DataRequired()])
-	submit = SubmitField('Submit', id="submit")
+	movie_submit = SubmitField('Submit', id="movie-submit")
 	
 class ProfileForm(FlaskForm):
 	favorite = StringField('Favorite Movie', id="favorite", validators=[DataRequired()])

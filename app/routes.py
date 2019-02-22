@@ -36,24 +36,6 @@ def answer():
 	answer = AnswerForm()
 	return render_template('addanswer.html', form=answer)
 
-@app.route('/', methods=['GET', 'POST'])	
-@app.route('/main', methods=['GET', 'POST'])
-def main():
-	login = LoginForm()
-	select = SelectMovieForm()
-	user = current_user
-	movie = ''
-	questions = ''
-	answers = ''
-	if login.validate_on_submit():
-		user = User.query.filter_by(username=login.username.data).first()
-		if user is None or not user.check_password(login.password.data):
-			return render_template('main.html', login=login, select=select, user=user, movie=movie, questions=questions, answers=answers)
-		else:
-			login_user(user)
-			return render_template('main.html', login=login, select=select, user=user, movie=movie, questions=questions, answers=answers)
-	return render_template('main.html', login=login, select=select, user=user, movie=movie, questions=questions, answers=answers)
-
 #Views with database integration
 @app.route('/submit-user', methods=['GET', 'POST'])
 def submit_user():
@@ -80,7 +62,7 @@ def submit_answer():
 	confirmation = write_answer(request.form['title'], request.form['question'], request.form['answer'])
 	return confirmation
 	
-#Permission restricted views
+#Login form with logic from Flask Mega Tutorial
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 	
@@ -98,3 +80,29 @@ def login():
 			return redirect(url_for('main'))
 
 	return render_template('login.html', form=form)
+	
+#Templates based on 'MAIN'
+
+#Initial 'MAIN' template with login refresh
+@app.route('/', methods=['GET', 'POST'])	
+@app.route('/main', methods=['GET', 'POST'])
+def main():
+	login = LoginForm()
+	select = SelectMovieForm()
+	user = current_user
+	movie = ''
+	questions = ''
+	answers = ''
+	
+	#Login logic
+	if login.login_submit.data and login.validate():
+		user = User.query.filter_by(username=login.username.data).first()
+		if user is None or not user.check_password(login.password.data):
+			return render_template('main.html', login=login, select=select, user=user, movie=movie, questions=questions, answers=answers)
+		else:
+			login_user(user)
+			return render_template('main.html', login=login, select=select, user=user, movie=movie, questions=questions, answers=answers)
+	
+	#Initial render
+	return render_template('main.html', login=login, select=select, user=user, movie=movie, questions=questions, answers=answers)
+

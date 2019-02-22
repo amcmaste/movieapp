@@ -71,7 +71,7 @@
 	</div>
 	<div class="body-container">
       <div id="right-inner" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        {{ wtf.quick_form(login, button_map={'submit':'primary'}) }}
+        {{ wtf.quick_form(login, button_map={'login-submit':'primary'}, id="login-form") }}
       </div>
 	</div>
   </div>
@@ -143,7 +143,7 @@
 	</div>
 	<div class="body-container">
       <div id="right-inner" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        {{ wtf.quick_form(select, button_map={'submit':'primary'}) }}
+        {{ wtf.quick_form(select, button_map={'movie-submit':'primary'}, id="select-movie-form") }}
       </div>
 	</div>
   </div>
