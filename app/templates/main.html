@@ -175,7 +175,7 @@
 		    <div class="glyphicon glyphicon-circle-arrow-down gcad">
 		    </div>
 		  </div>
-		  <a id="q1-content" class="question-content"  href=""{{ url_for('static', filename='select_question.js') }}"">
+		  <a id="q1-content" class="question-content"  href="#">
 		    <div id="q1-text" class="question-variable">
 		      TEXT
 		    </div>
@@ -196,7 +196,7 @@
 		    <div class="glyphicon glyphicon-circle-arrow-down gcad">
 		    </div>
 		  </div>
-		  <a id="q2-content" class="question-content" href=""{{ url_for('static', filename='select_question.js') }}"">
+		  <a id="q2-content" class="question-content" href="#">
 		    <div id="q2-text" class="question-variable">
 		      TEXT
 		    </div>
@@ -217,7 +217,7 @@
 		    <div class="glyphicon glyphicon-circle-arrow-down gcad">
 		    </div>
 		  </div>
-		  <a id="q3-content" class="question-content" href=""{{ url_for('static', filename='select_question.js') }}"">
+		  <a id="q3-content" class="question-content" href="#">
 		    <div id="q3-text" class="question-variable">
 		      TEXT
 		    </div>
@@ -238,7 +238,7 @@
 		    <div class="glyphicon glyphicon-circle-arrow-down gcad">
 		    </div>
 		  </div>
-		  <a id="q4-content" class="question-content" href=""{{ url_for('static', filename='select_question.js') }}"">
+		  <a id="q4-content" class="question-content" href="#">
 		    <div id="q4-text" class="question-variable">
 		      TEXT
 		    </div>
@@ -259,7 +259,7 @@
 		    <div class="glyphicon glyphicon-circle-arrow-down gcad">
 		    </div>
 		  </div>
-		  <a id="q5-content" class="question-content" href=""{{ url_for('static', filename='select_question.js') }}"">
+		  <a id="q5-content" class="question-content" href="#">
 		    <div id="q5-text" class="question-variable">
 		      TEXT
 		    </div>
@@ -405,4 +405,5 @@
 {% block scripts %}
 {{ super() }}
   <script type=text/javascript src="{{ url_for('static', filename='select_movie.js') }}"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='select_question.js') }}"></script>
 {% endblock %}
