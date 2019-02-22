@@ -551,6 +551,16 @@ body {
   grid-template-rows: repeat(2, 1fr);
 }
 
+.answer-specific-container {
+  height: auto;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: grid;
+  grid-template-columns: repeat(40, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
 .voting-points {
   grid-column-start: 1;
   grid-column-end: 7;
@@ -606,7 +616,26 @@ body {
   border-radius: 5px;
 }
 
+.answer-content {
+  grid-column-start: 9;
+  grid-column-end: 40;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 1em;
+  border: 1.3px dotted rgb(200, 200, 200);
+  border-radius: 5px;
+}
+
 .question-content:hover {
+  text-decoration:none;
+}
+
+.answer-content:hover {
   text-decoration:none;
 }
 
@@ -644,6 +673,27 @@ body {
 }
 
 .question-content:active {
+  text-decoration: none;
+}
+
+.answer-variable {
+  color: rgb(46, 46, 46);
+  text-decoration: none;
+}
+
+.answer-content:link {
+  text-decoration: none;
+}
+
+.answer-content:visited {
+  text-decoration: none;
+}
+
+.answer-content:hover {
+  text-decoration: none;
+}
+
+.answer-content:active {
   text-decoration: none;
 }
 
