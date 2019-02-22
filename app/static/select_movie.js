@@ -11,7 +11,9 @@ $(document).ready(function() {
     })
 	.done(function(response) {
 
-      alert(response)
+      $('#movie-outer-container').removeClass('hidden');
+	  $('#no-movie-outer-container').addClass('hidden');
+	  alert(response)
 	
 	});
 
