@@ -53,16 +53,33 @@ def write_answer(title, question, text):
 	result = Answer.query.filter_by(answer_text=text).first()
 	return str(result.answer_text)
 	
-def pack_movie(input):
+def pack_movie(movie):
 	return {
-	'id' : input.id,
-	'movie_title' : input.movie_title,
-	'path_to_img' : input.path_to_img,
-	'directed_by' : input.directed_by,
-	'summary_text' : input.summary_text,
-	'release_date' : input.release_date,
-	'create_datetime' : input.create_datetime,
-	'points' : input.points,
-	'level' : input.level,
-	'badge' : input.badge
+	'id' : movie.id,
+	'movie_title' : movie.movie_title,
+	'path_to_img' : movie.path_to_img,
+	'directed_by' : movie.directed_by,
+	'summary_text' : movie.summary_text,
+	'release_date' : movie.release_date,
+	'create_datetime' : movie.create_datetime,
+	'points' : movie.points,
+	'level' : movie.level,
+	'badge' : movie.badge
 	}
+	
+def pack_questions(questions):
+	output = []
+	for question in questions:
+		packed = {
+			'id' : question.id,
+			'user_id' : question.user_id,
+			'movie_id' : question.movie_id,
+			'question_text' : question.question_text,
+			'create_datetime' : question.create_datetime,
+			'points' : question.points,
+			'level' : question.level,
+			'badge' : question.badge,
+			'top' : question.top
+		}
+		output.append(packed)
+	return output

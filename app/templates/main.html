@@ -77,53 +77,7 @@
   </div>
   <!--END NO USER CONTAINER-->
   {% endif %}
-  
-  <!--MOVIE CONTAINER-->
-  <div id="movie-outer-container" class="outer-container hidden">
-    <div class="header-container">
-	  <div class="header-left">
-	    <div class="header-left-text">
-		  <span class="hide-movie">MOVIE</span>
-		</div>
-	  </div>
-	  <div class="header-right">
-	    <div class="header-right-text">
-		  <span class="hide-movie">COLLAPSE </span>
-		</div>
-	  </div>
-	</div>
-	<div class="body-container">
-	  <div class="movie-photo">
-	    <img id="movie-img" class="hide-movie" src="{{ url_for('static', filename='movie.jpg') }}">
-	  </div>
-	  <div class="movie-content">
-	    <div class="movie-title">
-		  <div class="movie-data-header">{{  movie.movie_title  }}</div>
-		  <a id="edit-movie-link" class="hide-movie" href="#" >Edit Movie</a>
-		</div>
-		<div class="movie-directed-by">
-		  <div class="movie-data-title">Directed By: </div>
-		  <div class="movie-data-content">{{  movie.directed_by  }}</div>
-		</div>
-		<div class="movie-release-date">
-		  <div class="movie-data-title">Released on: </div>
-		  <div class="movie-data-content">{{  movie.release_date  }}</div>
-		</div>
-		<div class="movie-points">
-		  <div class="movie-data-title">Points: </div>
-		  <div class="movie-data-content">{{  movie.points  }}</div>
-		</div>
-		<div id="movie-button-panel" class="hide-movie">
-		  <a id="change-movie-button" class="hide-movie" role="button" href="#" 
-		  class="btn btn-primary change-button">Change Movie</a>
-		</div>
-	  </div>
-	  <div class="movie-recent-info">
-	  </div>
-	</div>
-  </div>
-  <!--END MOVIE CONTAINER-->
-  
+    
   <!--NO MOVIE CONTAINER-->
   <div id="no-movie-outer-container" class="outer-container">
     <div class="header-container">
@@ -146,9 +100,54 @@
   </div>
   <!--END NO MOVIE CONTAINER-->
 
-  {% if questions %}
+  <!--MOVIE CONTAINER-->
+  <div id="movie-outer-container" class="outer-container hidden">
+    <div class="header-container">
+	  <div class="header-left">
+	    <div class="header-left-text">
+		  <span class="hide-movie">MOVIE</span>
+		</div>
+	  </div>
+	  <div class="header-right">
+	    <div class="header-right-text">
+		  <span class="hide-movie">COLLAPSE </span>
+		</div>
+	  </div>
+	</div>
+	<div class="body-container">
+	  <div class="movie-photo">
+	    <img id="movie-img" class="hide-movie" src="{{ url_for('static', filename='movie.jpg') }}">
+	  </div>
+	  <div class="movie-content">
+	    <div class="movie-title">
+		  <div id="movie-title" class="movie-data-header">TITLE</div>
+		  <a id="edit-movie-link" class="hide-movie" href="#" >Edit Movie</a>
+		</div>
+		<div class="movie-directed-by">
+		  <div class="movie-data-title">Directed By: </div>
+		  <div id="directed-by" class="movie-data-content">DIRECTOR</div>
+		</div>
+		<div class="movie-release-date">
+		  <div class="movie-data-title">Released on: </div>
+		  <div id="released-on" class="movie-data-content">RELEASE</div>
+		</div>
+		<div class="movie-points">
+		  <div class="movie-data-title">Points: </div>
+		  <div id="movie-points-count" class="movie-data-content">POINTS</div>
+		</div>
+		<div id="movie-button-panel" class="hide-movie">
+		  <a id="change-movie-button" class="hide-movie" role="button" href="#" 
+		  class="btn btn-primary change-button">Change Movie</a>
+		</div>
+	  </div>
+	  <div class="movie-recent-info">
+	  </div>
+	</div>
+  </div>
+  <!--END MOVIE CONTAINER-->
+
   <!--QUESTION CONTAINER-->
-  <div class="outer-container">
+  <div id="question-container" class="outer-container hidden">
     <div class="header-container">
 	  <div class="header-left">
 	    <div class="header-left-text">
@@ -161,12 +160,11 @@
 		</div>
 	  </div>
 	</div>
-	<div id="question-body-container">
-	  {% if questions[0] %}
+	<div id="q1-container" id="question-body-container hidden">
 	    <div class="question-specific-container">
 		  <div class="voting-points">
-		    <div class="points-variable">
-		      {{  questions[0].points  }} points
+		    <div id="q1-points" class="points-variable">
+		      POINTS
 		    </div>
 		  </div>
 		  <div class="upvote-arrow">
@@ -178,17 +176,15 @@
 		    </div>
 		  </div>
 		  <div class="question-content">
-		    <div class="question-variable">
-		      {{  questions[0].question_text }}
+		    <div id="q1-text" class="question-variable">
+		      TEXT
 		    </div>
 		  </div>
 	    </div>
-      {% endif %}
-      {% if questions[1] %}
-	    <div class="question-specific-container">
+	    <div id="q2-container" class="question-specific-container hidden">
 		  <div class="voting-points">
-		    <div class="points-variable">
-		      {{  questions[1].points  }} points
+		    <div id="q2-points" class="points-variable">
+		      POINTS
 		    </div>
 		  </div>
 		  <div class="upvote-arrow">
@@ -200,17 +196,15 @@
 		    </div>
 		  </div>
 		  <div id="featured-content" class="question-content">
-		    <div class="question-variable">
-		      {{  questions[1].question_text }}
+		    <div id="q2-text" class="question-variable">
+		      TEXT
 		    </div>
 		  </div>
 	    </div>
-      {% endif %}
-	  {% if questions[2] %}
-	    <div class="question-specific-container">
+	    <div id="q3-container" class="question-specific-container hidden">
 		  <div class="voting-points">
-		    <div class="points-variable">
-		      {{  questions[2].points  }} points
+		    <div id="q3-points" class="points-variable">
+		      POINTS
 		    </div>
 		  </div>
 		  <div class="upvote-arrow">
@@ -222,17 +216,15 @@
 		    </div>
 		  </div>
 		  <div class="question-content">
-		    <div class="question-variable">
-		      {{  questions[2].question_text }}
+		    <div id="q3-text" class="question-variable">
+		      TEXT
 		    </div>
 		  </div>
 	    </div>
-      {% endif %}
-	  {% if questions[3] %}
-	    <div class="question-specific-container">
+	    <div id="q4-container" class="question-specific-container hidden">
 		  <div class="voting-points">
-		    <div class="points-variable">
-		      {{  questions[3].points  }} points
+		    <div id="q4-points" class="points-variable">
+		      POINTS
 		    </div>
 		  </div>
 		  <div class="upvote-arrow">
@@ -244,17 +236,15 @@
 		    </div>
 		  </div>
 		  <div class="question-content">
-		    <div class="question-variable">
-		      {{  questions[3].question_text }}
+		    <div id="q4-text" class="question-variable">
+		      TEXT
 		    </div>
 		  </div>
 	    </div>
-      {% endif %}
-	  {% if questions[4] %}
-	    <div class="question-specific-container">
+	    <div id="q5-container" class="question-specific-container hidden">
 		  <div class="voting-points">
-		    <div class="points-variable">
-		      {{  questions[4].points  }} points
+		    <div id="q5-points" class="points-variable">
+		      POINTS
 		    </div>
 		  </div>
 		  <div class="upvote-arrow">
@@ -266,16 +256,14 @@
 		    </div>
 		  </div>
 		  <div class="question-content">
-		    <div class="question-variable">
-		      {{  questions[4].question_text }}
+		    <div id="q5-text" class="question-variable">
+		      TEXT
 		    </div>
 		  </div>
 	    </div>
-      {% endif %}
 	</div>
   </div>
   <!--END QUESTION CONTAINER-->
-  {% endif %}
   
   {% if answers %}
   <!--ANSWER CONTAINER-->
