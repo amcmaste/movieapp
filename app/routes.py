@@ -133,7 +133,7 @@ def select_question():
 	
 	#Pull and package answers data
 	number = request.args.get('number')
-	answers = Answer.query.filter_by(question_id=number).order_by('points desc').limit(5).all()
+	answers = Answer.query.filter_by(question_id=number).order_by('answer_text desc').limit(5).all()
 	if not isinstance(answers, list):
 	  answers = [answers]
 	answer_data = pack_answers(answers)

@@ -270,9 +270,8 @@
   </div>
   <!--END QUESTION CONTAINER-->
   
-  {% if answers %}
   <!--ANSWER CONTAINER-->
-  <div id="answer-container" class="outer-container">
+  <div id="answer-container" class="outer-container hidden">
     <div class="header-container">
 	  <div class="header-left">
 	    <div class="header-left-text">
@@ -285,12 +284,11 @@
 		</div>
 	  </div>
 	</div>
-	<div id="question-body-container">
-	  {% if answers[0] %}
-	    <div class="question-specific-container">
+	<div id="answer-body-container" class="hidden">
+	    <div id="a1-container" class="question-specific-container hidden">
 		  <div class="voting-points">
-		    <div class="points-variable">
-		      {{  answers[0].points  }} points
+		    <div id="a1-points" class="points-variable">
+		      POINTS
 		    </div>
 		  </div>
 		  <div class="upvote-arrow">
@@ -301,18 +299,17 @@
 		    <div class="glyphicon glyphicon-circle-arrow-down gcad">
 		    </div>
 		  </div>
-		  <div id="a1-content" class="question-content">
-		    <div class="question-variable">
-		      {{  answers[0].answer_text }}
+		  <a id="a1-content" class="question-content"  href="#">
+		    <div id="a1-text" class="question-variable">
+		      TEXT
 		    </div>
-		  </div>
+			<div id="a1-number" class="question-number hidden"></div>
+		  </a>
 	    </div>
-      {% endif %}
-      {% if answers[1] %}
-	    <div class="question-specific-container">
+	    <div id="a2-container" class="question-specific-container hidden">
 		  <div class="voting-points">
-		    <div class="points-variable">
-		      {{  answers[1].points  }} points
+		    <div id="a2-points" class="points-variable">
+		      POINTS
 		    </div>
 		  </div>
 		  <div class="upvote-arrow">
@@ -323,18 +320,17 @@
 		    <div class="glyphicon glyphicon-circle-arrow-down gcad">
 		    </div>
 		  </div>
-		  <div id="a2-content" class="question-content">
-		    <div class="question-variable">
-		      {{  answers[1].answer_text }}
+		  <a id="a2-content" class="question-content"  href="#">
+		    <div id="a2-text" class="question-variable">
+		      TEXT
 		    </div>
-		  </div>
+			<div id="a2-number" class="question-number hidden"></div>
+		  </a>
 	    </div>
-      {% endif %}
-	  {% if answers[2] %}
-	    <div class="question-specific-container">
+	    <div id="a3-container" class="question-specific-container hidden">
 		  <div class="voting-points">
-		    <div class="points-variable">
-		      {{  answers[2].points  }} points
+		    <div id="a3-points" class="points-variable">
+		      POINTS
 		    </div>
 		  </div>
 		  <div class="upvote-arrow">
@@ -345,18 +341,17 @@
 		    <div class="glyphicon glyphicon-circle-arrow-down gcad">
 		    </div>
 		  </div>
-		  <div id="a3-content" class="question-content">
-		    <div class="question-variable">
-		      {{  answers[2].answer_text }}
+		  <a id="a3-content" class="question-content"  href="#">
+		    <div id="q3-text" class="question-variable">
+		      TEXT
 		    </div>
-		  </div>
+			<div id="a3-number" class="question-number hidden"></div>
+		  </a>
 	    </div>
-      {% endif %}
-	  {% if answers[3] %}
-	    <div class="question-specific-container">
+	    <div id="a4-container" class="question-specific-container hidden">
 		  <div class="voting-points">
-		    <div class="points-variable">
-		      {{  answers[3].points  }} points
+		    <div id="a4-points" class="points-variable">
+		      POINTS
 		    </div>
 		  </div>
 		  <div class="upvote-arrow">
@@ -367,18 +362,17 @@
 		    <div class="glyphicon glyphicon-circle-arrow-down gcad">
 		    </div>
 		  </div>
-		  <div id="a4-content" class="question-content">
-		    <div class="question-variable">
-		      {{  answers[3].answer_text }}
+		  <a id="a4-content" class="question-content"  href="#">
+		    <div id="a4-text" class="question-variable">
+		      TEXT
 		    </div>
-		  </div>
+			<div id="a4-number" class="question-number hidden"></div>
+		  </a>
 	    </div>
-      {% endif %}
-	  {% if answers[4] %}
-	    <div class="question-specific-container">
+	    <div id="a5-container" class="question-specific-container hidden">
 		  <div class="voting-points">
-		    <div class="points-variable">
-		      {{  answers[4].points  }} points
+		    <div id="a5-points" class="points-variable">
+		      POINTS
 		    </div>
 		  </div>
 		  <div class="upvote-arrow">
@@ -389,17 +383,16 @@
 		    <div class="glyphicon glyphicon-circle-arrow-down gcad">
 		    </div>
 		  </div>
-		  <div id="a5-content" class="question-content">
-		    <div class="question-variable">
-		      {{  answers[4].answer_text }}
+		 <a id="a5-content" class="question-content"  href="#">
+		    <div id="a5-text" class="question-variable">
+		      TEXT
 		    </div>
-		  </div>
+			<div id="a5-number" class="question-number hidden"></div>
+		  </a>
 	    </div>
-      {% endif %}
 	</div>
   </div>
   <!--END ANSWER CONTAINER-->
-  {% endif %}
 {% endblock %}
 
 {% block scripts %}

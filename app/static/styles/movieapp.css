@@ -529,6 +529,18 @@ body {
   align-items: center;
 }
 
+#answer-body-container {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  height: auto;
+  width: 100%;
+  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .question-specific-container {
   height: auto;
   width: 100%;
