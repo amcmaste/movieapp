@@ -52,3 +52,17 @@ def write_answer(title, question, text):
 	#Verify that new entry exists
 	result = Answer.query.filter_by(answer_text=text).first()
 	return str(result.answer_text)
+	
+def pack_movie(input):
+	return {
+	'id' : input.id,
+	'movie_title' : input.movie_title,
+	'path_to_img' : input.path_to_img,
+	'directed_by' : input.directed_by,
+	'summary_text' : input.summary_text,
+	'release_date' : input.release_date,
+	'create_datetime' : input.create_datetime,
+	'points' : input.points,
+	'level' : input.level,
+	'badge' : input.badge
+	}

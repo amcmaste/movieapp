@@ -3,7 +3,7 @@ from flask import render_template, request, redirect, url_for, jsonify
 from flask_login import current_user, login_user
 from app import app
 from app.forms import LoginForm, SignupForm, ProfileForm, SelectMovieForm, MovieForm, QuestionForm, AnswerForm
-from app.functions import write_user, write_profile, write_movie, write_question, write_answer
+from app.functions import write_user, write_profile, write_movie, write_question, write_answer, pack_movie
 from app.models import User, Movie, Question, Answer
 
 #Route defintions
@@ -111,4 +111,5 @@ def main():
 def select_movie():
 	title = request.args.get('title')
 	movie = Movie.query.search(title).limit(1).first()
-	return str(movie.movie_title)
+	output = pack_movie(movie)
+	return jsonify(output)
