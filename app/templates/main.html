@@ -136,7 +136,7 @@
 		  <div id="movie-points-count" class="movie-data-content">POINTS</div>
 		</div>
 		<div id="movie-button-panel" class="hide-movie">
-		  <a id="change-movie-button" class="hide-movie" role="button" href=""{{ url_for('static', filename='change_movie.js') }}"" 
+		  <a id="change-movie-button" class="hide-movie" role="button" href=""{{ url_for('static', filename='change_movie.js') }}""
 		  class="btn btn-primary change-button">Change Movie</a>
 		</div>
 	  </div>
@@ -175,10 +175,11 @@
 		    <div class="glyphicon glyphicon-circle-arrow-down gcad">
 		    </div>
 		  </div>
-		  <a id="q1-content" class="question-content" href="#">
+		  <a id="q1-content" class="question-content"  href=""{{ url_for('static', filename='select_question.js') }}"">
 		    <div id="q1-text" class="question-variable">
 		      TEXT
 		    </div>
+			<div id="q1-number" class="question-number hidden"></div>
 		  </a>
 	    </div>
 	    <div id="q2-container" class="question-specific-container hidden">
@@ -195,10 +196,11 @@
 		    <div class="glyphicon glyphicon-circle-arrow-down gcad">
 		    </div>
 		  </div>
-		  <a id="q2-content" class="question-content" href="#">
+		  <a id="q2-content" class="question-content" href=""{{ url_for('static', filename='select_question.js') }}"">
 		    <div id="q2-text" class="question-variable">
 		      TEXT
 		    </div>
+			<div id="q2-number" class="question-number hidden"></div>
 		  </a>
 	    </div>
 	    <div id="q3-container" class="question-specific-container hidden">
@@ -215,10 +217,11 @@
 		    <div class="glyphicon glyphicon-circle-arrow-down gcad">
 		    </div>
 		  </div>
-		  <a id="q3-content" class="question-content" href="#">
+		  <a id="q3-content" class="question-content" href=""{{ url_for('static', filename='select_question.js') }}"">
 		    <div id="q3-text" class="question-variable">
 		      TEXT
 		    </div>
+			<div id="q3-number" class="question-number hidden"></div>
 		  </a>
 	    </div>
 	    <div id="q4-container" class="question-specific-container hidden">
@@ -235,10 +238,11 @@
 		    <div class="glyphicon glyphicon-circle-arrow-down gcad">
 		    </div>
 		  </div>
-		  <a id="q4-content" class="question-content" href="#">
+		  <a id="q4-content" class="question-content" href=""{{ url_for('static', filename='select_question.js') }}"">
 		    <div id="q4-text" class="question-variable">
 		      TEXT
 		    </div>
+			<div id="q4-number" class="question-number hidden"></div>
 		  </a>
 	    </div>
 	    <div id="q5-container" class="question-specific-container hidden">
@@ -255,10 +259,11 @@
 		    <div class="glyphicon glyphicon-circle-arrow-down gcad">
 		    </div>
 		  </div>
-		  <a id="q5-content" class="question-content" href="#">
+		  <a id="q5-content" class="question-content" href=""{{ url_for('static', filename='select_question.js') }}"">
 		    <div id="q5-text" class="question-variable">
 		      TEXT
 		    </div>
+			<div id="q5-number" class="question-number hidden"></div>
 		  </a>
 	    </div>
 	</div>

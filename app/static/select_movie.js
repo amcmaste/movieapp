@@ -33,30 +33,35 @@ $(document).ready(function() {
 		$('#q1-content').addClass('featured-content');
 		$('#q1-points').html(response[1][0].points);
 		$('#q1-text').html(response[1][0].shortened_text);
+		$('#q1-number').html(response[1][0].id);
 	  }
 	  
 	  if (response[1][1]) {
         $('#q2-container').removeClass('hidden');
 		$('#q2-points').html(response[1][1].points);
 		$('#q2-text').html(response[1][1].shortened_text);
+		$('#q2-number').html(response[1][1].id);
 	  }
 	
 	  if (response[1][2]) {
         $('#q3-container').removeClass('hidden');
 		$('#q3-points').html(response[1][2].points);
 		$('#q3-text').html(response[1][2].shortened_text);
+		$('#q3-number').html(response[1][2].id);
 	  }
 	
 	  if (response[1][3]) {
         $('#q4-container').removeClass('hidden');
 		$('#q4-points').html(response[1][3].points);
 		$('#q4-text').html(response[1][3].shortened_text);
+		$('#q4-number').html(response[1][3].id);
 	  }
 	
 	  if (response[1][4]) {
         $('#q5-container').removeClass('hidden');
 		$('#q5-points').html(response[1][4].points);
 		$('#q5-text').html(response[1][4].shortened_text);
+		$('#q5-number').html(response[1][4].id);
 	  }
 	
 	});
