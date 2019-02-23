@@ -137,6 +137,14 @@ body {
   border-color: hsl(170, 100%, 30%);
   color: white;
 }
+  
+#photo-img {
+  
+}
+  
+#movie-img {
+  box-shadow: -10px 10px 20px -5px #595959;
+}
 
 /* Basic Template - ABOUT */
 
