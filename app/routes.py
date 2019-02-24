@@ -191,4 +191,21 @@ def more_questions():
 	
 @app.route('/more-answers', methods=['GET'])
 def more_answers():
-	return True
+	#Pull and package question data
+	anumber = request.args.get('number')
+	qnumber = Answer.query.filter_by(id=anumber).first()
+	questions = Question.query.filter_by(id=qnumber.question_id).first()
+	if not isinstance(questions, list):
+	  questions = [questions]
+	question_data = pack_questions(questions)
+	
+	#Pull and package answers data
+	page = request.args.get('page')
+	off = int(page) * 5
+	answers = Answer.query.filter_by(question_id=qnumber.question_id).order_by('id desc').offset(off).limit(5).all()
+	if not isinstance(answers, list):
+	  answers = [answers]
+	answer_data = pack_answers(answers)
+	
+	#Return output
+	return jsonify([question_data, answer_data, page])
