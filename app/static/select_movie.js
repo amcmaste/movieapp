@@ -15,8 +15,8 @@ $(document).ready(function() {
 	    $('.question-content').removeClass('featured-content');
 		$('.answer-content').removeClass('featured-content');
 		$('#no-movie-outer-container').addClass('hidden');
-		$('#expand-questions-button').addClass('hidden')
-		$('#expand-answers-button').addClass('hidden')
+		$('#expand-questions-button').addClass('hidden');
+		$('#expand-answers-button').addClass('hidden');
         $('#q1-container').addClass('hidden');
 		$('#q2-container').addClass('hidden');
 		$('#q3-container').addClass('hidden');
@@ -81,6 +81,18 @@ $(document).ready(function() {
 		$('#q5-points').html(response[1][4].points);
 		$('#q5-text').html(response[1][4].shortened_text);
 		$('#q5-number').html(response[1][4].id);
+	  }
+	  
+	  if ($('#q1-container').hasClass('hidden') || $('#q2-container').hasClass('hidden') || $('#q3-container').hasClass('hidden') || $('#q4-container').hasClass('hidden') || $('#q5-container').hasClass('hidden')) {
+	    $('#more-questions-button').addClass('hidden');
+	  } else {
+	    $('#more-questions-button').removeClass('hidden');
+	  }
+	
+	  if ($('#a1-container').hasClass('hidden') || $('#a2-container').hasClass('hidden') || $('#a3-container').hasClass('hidden') || $('#a4-container').hasClass('hidden') || $('#a5-container').hasClass('hidden')) {
+	    $('#more-answers-button').addClass('hidden');
+	  } else {
+	    $('#more-answers-button').removeClass('hidden');
 	  }
 	
 	});

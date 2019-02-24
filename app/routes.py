@@ -116,7 +116,7 @@ def select_movie():
 	
 	#Pull and package question data
 	id = movie.id
-	questions = Question.query.filter_by(movie_id=id).order_by('question_text desc').limit(5).all()
+	questions = Question.query.filter_by(movie_id=id).order_by('id desc').limit(5).all()
 	question_data = pack_questions(questions)
 	
 	#Return output
@@ -133,7 +133,7 @@ def select_question():
 	
 	#Pull and package answers data
 	number = request.args.get('number')
-	answers = Answer.query.filter_by(question_id=number).order_by('answer_text desc').limit(5).all()
+	answers = Answer.query.filter_by(question_id=number).order_by('id desc').limit(5).all()
 	if not isinstance(answers, list):
 	  answers = [answers]
 	answer_data = pack_answers(answers)
@@ -164,10 +164,31 @@ def expand_answer():
 	question_data = pack_questions(questions)
 	
 	#Pull and package answers data
-	answers = Answer.query.filter_by(question_id=qnumber.question_id).order_by('answer_text desc').limit(5).all()
+	answers = Answer.query.filter_by(question_id=qnumber.question_id).order_by('id desc').limit(5).all()
 	if not isinstance(answers, list):
 	  answers = [answers]
 	answer_data = pack_answers(answers)
 	
 	#Return output
 	return jsonify([question_data, answer_data])
+	
+@app.route('/more-questions', methods=['GET'])
+def more_questions():
+	#Pull and package movie data
+	title = request.args.get('title')
+	movie = Movie.query.search(title).limit(1).first()
+	movie_data = pack_movie(movie)
+	
+	#Pull and package question data
+	page = request.args.get('number')
+	off = int(page) * 5
+	id = movie.id
+	questions = Question.query.filter_by(movie_id=id).order_by('id desc').offset(off).limit(5).all()
+	question_data = pack_questions(questions)
+	
+	#Return output
+	return jsonify([movie_data, question_data, page])
+	
+@app.route('/more-answers', methods=['GET'])
+def more_answers():
+	return True

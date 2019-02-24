@@ -12,14 +12,11 @@ $('document').ready(function() {
       url : '/select-answer'
     })
 	.done(function(response) {
-		
-	         
-	  if (response) {
-		$('.answer-content').removeClass('featured-content');
-		$('#no-movie-outer-container').addClass('hidden');
-	  } 
 	  
-	  $('#expand-answers-button').removeClass('hidden')
+	  $('.answer-content').removeClass('featured-content');
+	  $('#no-movie-outer-container').addClass('hidden');
+	  $('#expand-questions-button').removeClass('hidden');
+	  $('#expand-answers-button').removeClass('hidden');
 
       $('.answer-content').each(function(i, obj) {
 	  
@@ -33,10 +30,21 @@ $('document').ready(function() {
 		  $(this).parent().addClass('hidden');
 		
 		}
-	  
+		
 	  });
 	  
-
+	  if ($('#q1-container').hasClass('hidden') || $('#q2-container').hasClass('hidden') || $('#q3-container').hasClass('hidden') || $('#q4-container').hasClass('hidden') || $('#q5-container').hasClass('hidden')) {
+	    $('#more-questions-button').addClass('hidden');
+	  } else {
+	    $('#more-questions-button').removeClass('hidden');
+	  }
+	
+	  if ($('#a1-container').hasClass('hidden') || $('#a2-container').hasClass('hidden') || $('#a3-container').hasClass('hidden') || $('#a4-container').hasClass('hidden') || $('#a5-container').hasClass('hidden')) {
+	    $('#more-answers-button').addClass('hidden');
+	  } else {
+	    $('#more-answers-button').removeClass('hidden');
+	  }
+	  
 	});
 	
   });

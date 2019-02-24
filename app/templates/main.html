@@ -13,7 +13,7 @@
 	  </div>
 	  <div class="header-right">
 	    <div class="header-right-text">
-		  <a id="more-questions-button" role="button" href="#" 
+		  <a id="logout-button" role="button" href="#" 
 		  class="btn btn-primary btn-sm add-button minor-button">Logout</a>
 		</div>
 	  </div>
@@ -170,6 +170,7 @@
 	  </div>
 	</div>
 	<div id="question-body-container" class="hidden">
+		<div id="question-page" class="hidden">1</div>
 	    <div id="q1-container" class="question-specific-container">
 		  <div class="voting-points">
 		    <div id="q1-points" class="points-variable">
@@ -291,12 +292,13 @@
 	    <div class="header-right-text">
 		  <a id="expand-answers-button" role="button" href="#" 
 		  class="btn btn-primary btn-sm add-button minor-button expand-button hidden">Expand Answers</a>
-		  <a id="more-questions-button" role="button" href="#" 
+		  <a id="more-answers-button" role="button" href="#" 
 		  class="btn btn-primary btn-sm add-button minor-button">More Answers</a>
 		</div>
 	  </div>
 	</div>
 	<div id="answer-body-container" class="hidden">
+	    <div id="answer-page" class="hidden">1</div>
 	    <div id="a1-container" class="question-specific-container hidden">
 		  <div class="voting-points">
 		    <div id="a1-points" class="points-variable">
@@ -415,4 +417,6 @@
   <script type=text/javascript src="{{ url_for('static', filename='select_answer.js') }}"></script>
   <script type=text/javascript src="{{ url_for('static', filename='expand_questions.js') }}"></script>
   <script type=text/javascript src="{{ url_for('static', filename='expand_answers.js') }}"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='more_questions.js') }}"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='more_answers.js') }}"></script>
 {% endblock %}
