@@ -32,16 +32,19 @@ body {
 
 #navbar-submit {
   background-color: rgb(242, 244, 247);
+  border-color: rgb(242, 244, 247);
   color: rgb(46, 46, 46);
 }
 
 #navbar-login {
   background-color: rgb(242, 244, 247);
+  border-color: rgb(242, 244, 247);
   color: rgb(46, 46, 46);
 }
 
 #navbar-signup {
   background-color: rgb(242, 244, 247);
+  border-color: rgb(242, 244, 247);
   color: rgb(46, 46, 46);
 }
 
@@ -139,11 +142,11 @@ body {
 }
   
 #photo-img {
-  
+  /* box-shadow: -10px 10px 20px -5px #595959; */
 }
   
 #movie-img {
-  box-shadow: -10px 10px 20px -5px #595959;
+  /* box-shadow: -10px 10px 20px -5px #595959; */
 }
 
 /* Basic Template - ABOUT */
@@ -353,11 +356,6 @@ body {
   border-color: hsl(170, 100%, 30%);
 }
 
-.add-button:hover {
-  background-color: hsl(170, 100%, 30%);
-  border-color: hsl(170, 100%, 30%);
-}
-
 .minor-button {
   margin-right: 5px;
   background-color: white;
@@ -368,12 +366,8 @@ body {
   font-weight: bold;
 }
 
-.minor-button:hover {
-  background-color: white;
-  border-color: rgb(65, 0, 80);
-  border-width: 2px;
-  color: rgb(65, 0, 80);
-  font-weight: bold;
+.expand-button {
+  margin-right: 0px;
 }
 
 /* Main Template - ABOUT YOU - PROFILE DATA - DETAIL - CONTENT */
@@ -504,11 +498,6 @@ body {
 }
 
 .change-button {
-  background-color: hsl(170, 100%, 30%);
-  border-color: hsl(170, 100%, 30%);
-}
-
-.change-button:hover {
   background-color: hsl(170, 100%, 30%);
   border-color: hsl(170, 100%, 30%);
 }
@@ -739,4 +728,32 @@ body {
   color: rgb(65, 0, 80);
 }
 
-/* Responsive Behavior for MAIN */
+/* Bootstrap button overrides */
+
+.add-button:hover, .add-button:focus, .add-button:active, .add-button.active, .open>.dropdown-toggle.add-button {
+  background-color: hsl(170, 100%, 30%) !important;
+  border-color: hsl(170, 100%, 30%) !important;
+}
+
+.minor-button:hover, .minor-button:focus, .minor-button:active, .minor-button.active, .open>.dropdown-toggle.minor-button {
+  background-color: white !important;
+  border-color: rgb(65, 0, 80) !important;
+  color: rgb(65, 0, 80) !important;
+}
+
+#navbar-submit:hover, #navbar-submit:focus, #navbar-submit:active, #navbar-submit.active, .open>.dropdown-toggle#navbar-submit  {
+  background-color: rgb(242, 244, 247) !important;
+  border-color: rgb(242, 244, 247) !important;
+  color: rgb(46, 46, 46) !important;
+}
+
+#navbar-login:hover, #navbar-login:focus, #navbar-login:active, #navbar-login.active, .open>.dropdown-toggle#navbar-login   {
+  background-color: rgb(242, 244, 247) !important;
+  border-color: rgb(242, 244, 247) !important;
+  color: rgb(46, 46, 46) !important;
+}
+
+#navbar-signup:hover, #navbar-signup:focus, #navbar-signup:active, #navbar-signup.active, .open>.dropdown-toggle#navbar-signup   {
+  background-color: rgb(242, 244, 247) !important;
+  border-color: rgb(242, 244, 247) !important;
+  color: rgb(46, 46, 46) !important;

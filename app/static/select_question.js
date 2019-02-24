@@ -28,6 +28,7 @@ $('document').ready(function() {
 	  });
 	  
 	  if (response[1]) {
+		$('#expand-questions-button').removeClass('hidden')
 	    $('#answer-container').removeClass('hidden');
 		$('#answer-body-container').removeClass('hidden');
 	  }

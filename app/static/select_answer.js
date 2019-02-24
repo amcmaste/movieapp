@@ -12,6 +12,8 @@ $('document').ready(function() {
       url : '/select-answer'
     })
 	.done(function(response) {
+	  
+	  $('#expand-answers-button').removeClass('hidden')
 
       $('.answer-content').each(function(i, obj) {
 	  
