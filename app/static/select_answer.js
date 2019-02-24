@@ -12,6 +12,12 @@ $('document').ready(function() {
       url : '/select-answer'
     })
 	.done(function(response) {
+		
+	         
+	  if (response) {
+		$('.answer-content').removeClass('featured-content');
+		$('#no-movie-outer-container').addClass('hidden');
+	  } 
 	  
 	  $('#expand-answers-button').removeClass('hidden')
 

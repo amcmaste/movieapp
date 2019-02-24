@@ -152,3 +152,22 @@ def select_answer():
 	
 	#Return output
 	return jsonify(answer_data)
+	
+@app.route('/expand-answers', methods=['GET'])
+def expand_answer():
+	#Pull and package question data
+	anumber = request.args.get('number')
+	qnumber = Answer.query.filter_by(id=anumber).first()
+	questions = Question.query.filter_by(id=qnumber.question_id).first()
+	if not isinstance(questions, list):
+	  questions = [questions]
+	question_data = pack_questions(questions)
+	
+	#Pull and package answers data
+	answers = Answer.query.filter_by(question_id=qnumber.question_id).order_by('answer_text desc').limit(5).all()
+	if not isinstance(answers, list):
+	  answers = [answers]
+	answer_data = pack_answers(answers)
+	
+	#Return output
+	return jsonify([question_data, answer_data])

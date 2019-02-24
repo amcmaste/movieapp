@@ -111,7 +111,7 @@
 	  </div>
 	  <div class="header-right">
 	    <div class="header-right-text">
-		  <a id="more-questions-button" role="button" href="#" 
+		  <a id="change-movie-button" role="button" href="#" 
 		  class="btn btn-primary btn-sm add-button minor-button">Change Movie</a>
 		</div>
 	  </div>
@@ -409,7 +409,10 @@
 
 {% block scripts %}
 {{ super() }}
+  <script type=text/javascript src="{{ url_for('static', filename='change_movie.js') }}"></script>
   <script type=text/javascript src="{{ url_for('static', filename='select_movie.js') }}"></script>
   <script type=text/javascript src="{{ url_for('static', filename='select_question.js') }}"></script>
   <script type=text/javascript src="{{ url_for('static', filename='select_answer.js') }}"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='expand_questions.js') }}"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='expand_answers.js') }}"></script>
 {% endblock %}

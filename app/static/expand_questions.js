@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  $('#select-movie-form').on('submit', function(event) {
+  $('#expand-questions-button').on('click', function(event) {
 
     $.ajax({
       data : {
@@ -30,24 +30,7 @@ $(document).ready(function() {
 		$('#a4-container').addClass('hidden');
 		$('#a5-container').addClass('hidden');
 	  } 
-	  
-      if (response[0]) {
-	    $('#no-movie-outer-container').addClass('hidden');
-	  }
-	  
-	  if (response[0]) {
-	    $('#movie-outer-container').removeClass('hidden');
-		$('#movie-title').html(response[0].movie_title);
-		$('#directed-by').html(response[0].directed_by);
-		$('#released-on').html(response[0].release_date);
-		$('#movie-points-count').html(response[0].points)
-	  }
-	  
-	  if (response[1]) {
-	    $('#question-container').removeClass('hidden');
-		$('#question-body-container').removeClass('hidden');
-	  }
-	  
+
 	  if (response[1][0]) {
         $('#q1-container').removeClass('hidden');
 		$('#q1-points').html(response[1][0].points);
