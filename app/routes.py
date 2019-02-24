@@ -1,6 +1,6 @@
 #Imports
 from flask import render_template, request, redirect, url_for, jsonify
-from flask_login import current_user, login_user
+from flask_login import current_user, login_user,logout_user
 from app import app
 from app.forms import LoginForm, SignupForm, ProfileForm, SelectMovieForm, MovieForm, QuestionForm, AnswerForm
 from app.functions import write_user, write_profile, write_movie, write_question, write_answer, pack_movie, pack_questions, pack_answers
@@ -80,6 +80,11 @@ def login():
 			return redirect(url_for('main'))
 
 	return render_template('login.html', form=form)
+	
+@app.route('/logout', methods=['GET', 'POST'])
+def logout():
+	logout_user()
+	return redirect(url_for('main'))
 	
 #Templates based on 'MAIN'
 
