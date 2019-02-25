@@ -5,6 +5,7 @@ from app import app
 from app.forms import LoginForm, SignupForm, ProfileForm, SelectMovieForm, MovieForm, QuestionForm, AnswerForm
 from app.functions import write_user, write_profile, write_movie, write_question, write_answer, pack_movie, pack_questions, pack_answers
 from app.models import User, Movie, Question, Answer
+from app import db
 
 #Route defintions
 @app.route('/about', methods=['GET'])
@@ -214,3 +215,73 @@ def more_answers():
 	
 	#Return output
 	return jsonify([question_data, answer_data, page])
+	
+@app.route('/upvote-question', methods=['POST'])
+def upvote_question():
+	number = request.form.get('number')
+	question = Question.query.filter_by(id=number).first()
+	
+	if not question.points:
+		points = 0
+	else:
+		points = question.points
+	
+	question.points = points + 1
+	db.session.commit()
+	
+	new = Question.query.filter_by(id=number).first()
+	return jsonify([number, new.points])
+	
+@app.route('/downvote-question', methods=['POST'])
+def downvote_question():
+	number = request.form.get('number')
+	question = Question.query.filter_by(id=number).first()
+	
+	if not question.points:
+		points = 0
+	else:
+		points = question.points
+	
+	if question.points > 0:
+		question.points = points - 1
+	else:
+		question.points = 0
+	db.session.commit()
+	
+	new = Question.query.filter_by(id=number).first()
+	return jsonify([number, new.points])
+	
+@app.route('/upvote-answer', methods=['POST'])
+def upvote_answer():
+	number = request.form.get('number')
+	answer = Answer.query.filter_by(id=number).first()
+	
+	if not answer.points:
+		points = 0
+	else:
+		points = answer.points
+	
+	answer.points = points + 1
+	db.session.commit()
+	
+	new = Answer.query.filter_by(id=number).first()
+	return jsonify([number, new.points])
+	
+@app.route('/downvote-answer', methods=['POST'])
+def downvote_answer():
+	number = request.form.get('number')
+	answer = Answer.query.filter_by(id=number).first()
+	
+	if not answer.points:
+		points = 0
+	else:
+		points = answer.points
+	
+	if answer.points > 0:
+		answer.points = points - 1
+	else:
+		answer.points = 0
+	db.session.commit()
+	
+	new = Answer.query.filter_by(id=number).first()
+	return jsonify([number, new.points])
