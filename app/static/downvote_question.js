@@ -1,19 +1,23 @@
 $(document).ready(function() {
 
   $('.downvote-question-arrow').on('click', function(event) {
+	
+	let reference = $(this).siblings('.question-content');
 
     $.ajax({
       data : {
-        number : $(this).siblings('.question-content').children('.question-number').text()
+        number : reference.children('.question-number').text()
       },
       type : 'POST',
       url : '/downvote-question'
-    })
-	
-	.done(function(response) {
+    }).done(function(response) {
 	  
-	  $(this).siblings('.voting-points').children('.points-variable').html(response[1] + ' points');
+	  reference.siblings('.voting-points').children('.points-variable').html(response[1]);
 	  
+	}).fail(function() {
+	  
+	  alert('Failure!')
+    
 	});
   });
 });

@@ -1,4 +1,4 @@
-$('document').ready(function() {
+$(document).ready(function() {
 
   $('.question-content').on('click', function(event) {
 	
