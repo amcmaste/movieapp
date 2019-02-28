@@ -27,6 +27,7 @@ $(document).ready(function() {
 		$('#fav-movie').html(response.fav_movie);
 		$('#user-since').html(response.user_since);
 		$('#user-points').html(response.points);
+		$('#user-container').animate({height: '228px'}, 500);
 	
 	  }
 	
