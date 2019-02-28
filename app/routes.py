@@ -63,24 +63,19 @@ def submit_answer():
 	confirmation = write_answer(request.form['title'], request.form['question'], request.form['answer'])
 	return confirmation
 	
-#Login form with logic from Flask Mega Tutorial
-@app.route('/login', methods=['GET', 'POST'])
+#New JavaScript login logic
+@app.route('/login', methods=['POST'])
 def login():
-	
-	form = LoginForm()
-	
-	if current_user.is_authenticated:
-		return redirect(url_for('main'))
-	
-	if form.validate_on_submit():
-		user = User.query.filter_by(username=form.username.data).first()
-		if user is None or not user.check_password(form.password.data):
-			return redirect(url_for('login'))
-		else:
-			login_user(user)
-			return redirect(url_for('main'))
 
-	return render_template('login.html', form=form)
+	username = request.form.get('user')
+	password = request.form.get('pword')
+	
+	user = User.query.filter_by(username=username).first()
+	if user is None or not user.check_password(password):
+		return False
+	else:
+		login_user(user)
+		return jsonify({'user': user.username, 'fav_movie': user.fav_movie, 'user_since': user.join_datetime, 'points': user.points})
 	
 @app.route('/logout', methods=['GET', 'POST'])
 def logout():
@@ -93,6 +88,7 @@ def logout():
 @app.route('/', methods=['GET', 'POST'])	
 @app.route('/main', methods=['GET', 'POST'])
 def main():
+	#Set variables
 	login = LoginForm()
 	select = SelectMovieForm()
 	user = current_user
@@ -100,16 +96,7 @@ def main():
 	questions = ''
 	answers = ''
 	
-	#Login logic
-	if login.login_submit.data and login.validate():
-		user = User.query.filter_by(username=login.username.data).first()
-		if user is None or not user.check_password(login.password.data):
-			return render_template('main.html', login=login, select=select, user=user, movie=movie, questions=questions, answers=answers)
-		else:
-			login_user(user)
-			return render_template('main.html', login=login, select=select, user=user, movie=movie, questions=questions, answers=answers)
-	
-	#Initial render
+	#Initial page render
 	return render_template('main.html', login=login, select=select, user=user, movie=movie, questions=questions, answers=answers)
 
 #Select Movie helper function
