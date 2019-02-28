@@ -105,6 +105,11 @@ def main():
 #Select Movie helper function
 @app.route('/select-movie', methods=['GET'])
 def select_movie():
+	#Initialize Variables
+	movie_data = []
+	question_data = []
+	answer_data =[]
+	
 	#Pull and package movie data
 	title = request.args.get('title')
 	movie = Movie.query.search(title).limit(1).first()
@@ -112,11 +117,15 @@ def select_movie():
 	
 	#Pull and package question data
 	id = movie.id
-	questions = Question.query.filter_by(movie_id=id).order_by('id desc').limit(5).all()
+	questions = Question.query.filter_by(movie_id=id).order_by('points desc').limit(5).all()
+	if not isinstance(questions, list):
+	  questions = [questions]
 	question_data = pack_questions(questions)
 	
+	#Pull and package answer data
+	
 	#Return output
-	return jsonify([movie_data, question_data])
+	return jsonify([movie_data, question_data, answer_data])
 	
 @app.route('/select-question', methods=['GET'])
 def select_question():
