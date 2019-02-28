@@ -74,76 +74,71 @@
   </div>
   <!--END USER CONTAINER-->
     
-  <!--NO MOVIE CONTAINER-->
-  <div id="no-movie-outer-container" class="outer-container">
-    <div class="header-container">
-	  <div class="header-left">
-	    <div class="header-left-text">
-		  <span class="no-movie">SELECT MOVIE</span>
-		</div>
-	  </div>
-	  <div class="header-right">
-	    <div class="header-right-text">
-		  <span class="no-movie"></span>
-		</div>
-	  </div>
-	</div>
-	<div class="body-container">
-      <div id="right-inner" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        {{ wtf.quick_form(select, button_map={'movie-submit':'primary'}, id="select-movie-form") }}
-      </div>
-	</div>
-  </div>
-  <!--END NO MOVIE CONTAINER-->
-
   <!--MOVIE CONTAINER-->
-  <div id="movie-outer-container" class="outer-container hidden">
-    <div class="header-container">
-	  <div class="header-left">
-	    <div class="header-left-text">
-		  <span class="hide-movie">MOVIE</span>
-		</div>
+  <div id="movie-container" class="outer-container">
+    <div id="no-movie-toggle" class="movie-toggle">
+      <div class="header-container">
+	    <div class="header-left">
+	      <div class="header-left-text">
+		    <span class="no-movie">SELECT MOVIE</span>
+		  </div>
+	    </div>
+	    <div class="header-right">
+	      <div class="header-right-text">
+		    <span class="no-movie"></span>
+		  </div>
+	    </div>
 	  </div>
-	  <div class="header-right">
-	    <div class="header-right-text">
-		  <a id="change-movie-button" role="button" href="#" 
-		  class="btn btn-primary btn-sm add-button minor-button">Change Movie</a>
-		</div>
-	  </div>
-	</div>
-	<div class="body-container">
-	  <div class="movie-photo">
-	    <img id="movie-img" class="hide-movie" src="{{ url_for('static', filename='movie-placeholder.jpg') }}">
-	  </div>
-	  <div class="movie-content">
-	    <div class="movie-title">
-		  <div id="movie-title" class="movie-data-header">TITLE</div>
-		  <a id="edit-movie-link" class="hide-movie" href="#" >Edit Movie</a>
-		</div>
-		<div class="movie-directed-by">
-		  <div class="movie-data-title">Directed By: </div>
-		  <div id="directed-by" class="movie-data-content">DIRECTOR</div>
-		</div>
-		<div class="movie-release-date">
-		  <div class="movie-data-title">Released on: </div>
-		  <div id="released-on" class="movie-data-content">RELEASE</div>
-		</div>
-		<div class="movie-points">
-		  <div class="movie-data-title">Points: </div>
-		  <div id="movie-points-count" class="movie-data-content">POINTS</div>
-		</div>
-		<div id="movie-button-panel" class="hide-movie">
-		<!--
-		  <a id="change-movie-button" class="hide-movie" role="button" href=""{{ url_for('static', filename='change_movie.js') }}""
-		  class="btn btn-primary change-button">Change Movie</a>
-		-->
-		  <a id="imdb-link" role="button" href="#" 
-		  class="btn btn-primary add-button">IDMB Profile</a>
-		</div>
-	  </div>
-	  <div class="movie-recent-info">
+	  <div class="body-container">
+        <div id="right-inner" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          {{ wtf.quick_form(select, button_map={'movie-submit':'primary'}, id="select-movie-form") }}
+        </div>
 	  </div>
 	</div>
+    <div id="movie-toggle" class="movie-toggle hidden">
+      <div class="header-container">
+	    <div class="header-left">
+	      <div class="header-left-text">
+		    <span class="hide-movie">MOVIE</span>
+		  </div>
+	    </div>
+	    <div class="header-right">
+	      <div class="header-right-text">
+		    <a id="change-movie-button" role="button" href="#" 
+		    class="btn btn-primary btn-sm add-button minor-button">Change Movie</a>
+		  </div>
+	    </div>
+	  </div>
+	  <div class="body-container">
+	    <div class="movie-photo">
+	      <img id="movie-img" class="hide-movie" src="{{ url_for('static', filename='movie-placeholder.jpg') }}">
+	    </div>
+	    <div class="movie-content">
+	      <div class="movie-title">
+		    <div id="movie-title" class="movie-data-header">TITLE</div>
+		    <a id="edit-movie-link" class="hide-movie" href="#" >Edit Movie</a>
+		  </div>
+		  <div class="movie-directed-by">
+		    <div class="movie-data-title">Directed By: </div>
+		    <div id="directed-by" class="movie-data-content">DIRECTOR</div>
+		  </div>
+		  <div class="movie-release-date">
+		    <div class="movie-data-title">Released on: </div>
+		    <div id="released-on" class="movie-data-content">RELEASE</div>
+		  </div>
+		  <div class="movie-points">
+		    <div class="movie-data-title">Points: </div>
+		    <div id="movie-points-count" class="movie-data-content">POINTS</div>
+		  </div>
+		  <div id="movie-button-panel" class="hide-movie">
+		    <a id="imdb-link" role="button" href="#" 
+		    class="btn btn-primary add-button">IMDB Profile</a>
+		  </div>
+	    </div>
+	    <div class="movie-recent-info">
+	    </div>
+	  </div>
+    </div>
   </div>
   <!--END MOVIE CONTAINER-->
 
