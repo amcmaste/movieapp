@@ -77,10 +77,13 @@ def login():
 		login_user(user)
 		return jsonify({'user': user.username, 'fav_movie': user.fav_movie, 'user_since': user.join_datetime, 'points': user.points})
 	
-@app.route('/logout', methods=['GET', 'POST'])
+@app.route('/logout', methods=['POST'])
 def logout():
+
+	username = request.form.get('user')
+
 	logout_user()
-	return redirect(url_for('main'))
+	return jsonify({'user': username})
 	
 #Templates based on 'MAIN'
 
