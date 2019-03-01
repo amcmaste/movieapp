@@ -117,7 +117,7 @@ def select_movie():
 	
 	#Pull and package question data
 	id = movie.id
-	questions = Question.query.filter_by(movie_id=id).order_by('points desc').limit(5).all()
+	questions = Question.query.filter_by(movie_id=id).order_by('id desc').limit(5).all()
 	if not isinstance(questions, list):
 	  questions = [questions]
 	question_data = pack_questions(questions)
@@ -157,21 +157,39 @@ def select_question():
 	
 @app.route('/select-answer', methods=['GET'])
 def select_answer():
+	#Initialize variables
+	movie_data = []
+	question_data = []
+	answer_data =[]
+	
 	#Pull and package answers data
 	number = request.args.get('number')
-	answers = Answer.query.filter_by(id=number).limit(1).first()
+	answers = Answer.query.filter_by(id=number).first()
+	questions = Question.query.filter_by(id=answers.question_id).first()
+	movie = Movie.query.filter_by(id=questions.movie_id).first()
+	movie_data = pack_movie(movie)
+	if not isinstance(questions, list):
+	  questions = [questions]
+	question_data = pack_questions(questions)
 	if not isinstance(answers, list):
 	  answers = [answers]
 	answer_data = pack_answers(answers)
 	
 	#Return output
-	return jsonify(answer_data)
+	return jsonify([movie_data, question_data, answer_data])
 	
 @app.route('/expand-answers', methods=['GET'])
 def expand_answer():
+	#Initialize variables
+	movie_data = []
+	question_data = []
+	answer_data =[]
+	
 	#Pull and package question data
 	anumber = request.args.get('number')
 	qnumber = Answer.query.filter_by(id=anumber).first()
+	mnumber = Question.query.filter_by(id=qnumber.question_id).first()
+	movie = Movie.query.filter_by(id=mnumber.movie_id).first()
 	questions = Question.query.filter_by(id=qnumber.question_id).first()
 	if not isinstance(questions, list):
 	  questions = [questions]
@@ -183,28 +201,43 @@ def expand_answer():
 	  answers = [answers]
 	answer_data = pack_answers(answers)
 	
+	#Pull and package movie data
+	movie = Movie.query.filter_by(id=mnumber.movie_id).first()
+	movie_data = pack_movie(movie)
+	
 	#Return output
-	return jsonify([question_data, answer_data])
+	return jsonify([movie_data, question_data, answer_data])
 	
 @app.route('/more-questions', methods=['GET'])
 def more_questions():
+	#Initialize variables
+	movie_data = []
+	question_data = []
+	answer_data =[]
+	
 	#Pull and package movie data
-	title = request.args.get('title')
-	movie = Movie.query.search(title).limit(1).first()
+	qnumber = request.args.get('number')
+	mnumber = Question.query.filter_by(id=qnumber).first().movie_id
+	movie = Movie.query.filter_by(id=mnumber).first()
 	movie_data = pack_movie(movie)
 	
 	#Pull and package question data
-	page = request.args.get('number')
+	page = request.args.get('page')
 	off = int(page) * 5
 	id = movie.id
 	questions = Question.query.filter_by(movie_id=id).order_by('id desc').offset(off).limit(5).all()
 	question_data = pack_questions(questions)
 	
 	#Return output
-	return jsonify([movie_data, question_data, page])
+	return jsonify([movie_data, question_data, answer_data, page])
 	
 @app.route('/more-answers', methods=['GET'])
 def more_answers():
+	#Initialize variables
+	movie_data = []
+	question_data = []
+	answer_data =[]
+	
 	#Pull and package question data
 	anumber = request.args.get('number')
 	qnumber = Answer.query.filter_by(id=anumber).first()
@@ -222,7 +255,7 @@ def more_answers():
 	answer_data = pack_answers(answers)
 	
 	#Return output
-	return jsonify([question_data, answer_data, page])
+	return jsonify([movie_data, question_data, answer_data, page])
 	
 @app.route('/upvote-question', methods=['POST'])
 def upvote_question():

@@ -54,7 +54,7 @@ $(document).ready(function() {
 	  if (response[1]) {
 	  
 	    // Expand and Resize question container
-		let calculated = 50 + 17 + 61 * response[1].length
+		let calculated = 50 + 17 + 61 * response[1].length;
 	    $('#question-container').removeClass('hidden');
         $('#question-body-container').removeClass('hidden');
 		$('#question-container').animate({height: calculated}, 500);
@@ -80,8 +80,10 @@ $(document).ready(function() {
 	  if (response[2]) {
 	  
 	    // Expand answer containers
+        let calculated = 50 + 17 + 61 * response[2].length;
 	    $('#answer-container').removeClass('hidden');
-	    $('#answer-body-container').removeClass('hidden');
+        $('#answer-body-container').removeClass('hidden');
+		$('#answer-container').animate({height: calculated}, 500);
 	  
 	    // Populate individual answers
 	    if (response[2][0]) {
@@ -137,6 +139,10 @@ $(document).ready(function() {
 	  } else {
 	    $('#more-answers-button').removeClass('hidden');
 	  }
+	  
+	  	  
+	  //Scroll to bottom of page
+	  /* setTimeout(function(){document.body.scrollTop = document.body.scrollHeight;}, 1000); */
 	
     });
 	

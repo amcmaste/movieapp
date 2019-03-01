@@ -47,7 +47,7 @@ $(document).ready(function() {
 	  }
 	  
 	  // Expand and Resize question container
-      let calculated = 50 + 17 + 61 * response[1].length
+      let calculated = 50 + 17 + 61 * response[1].length;
 	  $('#question-container').removeClass('hidden');
       $('#question-body-container').removeClass('hidden');
       $('#question-container').animate({height: calculated}, 500);
