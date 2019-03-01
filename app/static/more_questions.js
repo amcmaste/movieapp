@@ -80,7 +80,7 @@ $(document).ready(function() {
 	  //If movies are returned
 	  if (response[0]) {
 		// Adjust movie containers
-		$('#movie-container').animate({height: '266px'}, 500);
+		setTimeout(function(){ $('#movie-container').animate({height: '266px'}, 200); }, 0);
 		$('#movie-toggle').removeClass('hidden');
 		
 		// Set movie variables
@@ -94,7 +94,7 @@ $(document).ready(function() {
 	  if (response[1]) {
 		//Calculate height of container
 		let calculated = 50 + 17 + 61 * response[1].length;
-		$('#question-container').animate({height: calculated}, 500);
+		setTimeout(function(){ $('#question-container').animate({height: calculated}, 200);}, 100);
 	    $('#question-container').removeClass('hidden');
 		$('#question-body-container').removeClass('hidden');
 	  }
@@ -155,7 +155,7 @@ $(document).ready(function() {
 		  console.log($(document).height());
 		  $("html, body").animate({ scrollTop: ($(document).height()) });
 	  
-	  }, 100);
+	  }, 200);
 	
 	});
 

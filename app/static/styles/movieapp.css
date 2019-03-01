@@ -184,15 +184,20 @@ body {
 
 #user-container {
   height: 288px;
-  margin-top: 20px;
+  margin: 10px;
+}
+
+
+#movie-container {
+  margin: 10px;
 }
 
 #question-container {
-  margin-bottom: 20px;
+  margin: 10px;
 }
 
 #answer-container {
-  margin-bottom: 20px;
+  margin: 10px;
 }
 
 /* Main Template - MOVIE */

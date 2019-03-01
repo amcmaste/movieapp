@@ -55,7 +55,7 @@ $(document).ready(function() {
 		let calculated = 50 + 17 + 61 * response[1].length;
 	    $('#question-container').removeClass('hidden');
         $('#question-body-container').removeClass('hidden');
-		$('#question-container').animate({height: calculated}, 500);
+		setTimeout(function(){ $('#question-container').animate({height: calculated}, 200); }, 0);
 	  
 	    // Reveal and feature clicked question
 	    $('.question-content').each(function(i, obj) {
@@ -81,7 +81,7 @@ $(document).ready(function() {
         let calculated = 50 + 17 + 61 * response[2].length;
 	    $('#answer-container').removeClass('hidden');
         $('#answer-body-container').removeClass('hidden');
-		$('#answer-container').animate({height: calculated}, 500);
+		setTimeout(function() { $('#answer-container').animate({height: calculated}, 200); }, 100);
 	  
 	    // Populate individual answers
 	    if (response[2][0]) {
@@ -144,7 +144,7 @@ $(document).ready(function() {
 		  console.log($(document).height());
 		  $("html, body").animate({ scrollTop: ($(document).height()) });
 	  
-	  }, 100);
+	  }, 200);
 	
 	});
 	

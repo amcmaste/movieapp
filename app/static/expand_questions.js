@@ -50,7 +50,7 @@ $(document).ready(function() {
       let calculated = 50 + 17 + 61 * response[1].length;
 	  $('#question-container').removeClass('hidden');
       $('#question-body-container').removeClass('hidden');
-      $('#question-container').animate({height: calculated}, 500);
+      setTimeout(function(){ $('#question-container').animate({height: calculated}, 200); }, 0);
 	  
 	  // Expand individual questions
 	  if (response[1][0]) {
