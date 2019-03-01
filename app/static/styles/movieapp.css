@@ -187,6 +187,10 @@ body {
   margin-top: 20px;
 }
 
+#question-container {
+  margin-bottom: 20px;
+}
+
 #answer-container {
   margin-bottom: 20px;
 }
@@ -559,13 +563,13 @@ body {
 #question-body-container {
   padding-top: 7px;
   padding-bottom: 7px;
-  height: auto;
+  height: 314px;
   width: 100%;
   display: grid;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 #answer-body-container {

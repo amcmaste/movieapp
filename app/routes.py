@@ -105,7 +105,7 @@ def main():
 #Select Movie helper function
 @app.route('/select-movie', methods=['GET'])
 def select_movie():
-	#Initialize Variables
+	#Initialize variables
 	movie_data = []
 	question_data = []
 	answer_data =[]
@@ -129,11 +129,20 @@ def select_movie():
 	
 @app.route('/select-question', methods=['GET'])
 def select_question():
-	#Pull and package question data
+	#Initialize variables
+	movie_data = []
+	question_data = []
+	answer_data =[]
+	
+	#Pull and package movie data
 	number = request.args.get('number')
-	questions = Question.query.filter_by(id=number).first()
-	if not isinstance(questions, list):
-	  questions = [questions]
+	question = Question.query.filter_by(id=number).first()
+	movie = Movie.query.filter_by(id=question.movie_id).first()
+	movie_data = pack_movie(movie)
+	
+	#Pull and package question data
+	if not isinstance(question, list):
+	  questions = [question]
 	question_data = pack_questions(questions)
 	
 	#Pull and package answers data
@@ -144,7 +153,7 @@ def select_question():
 	answer_data = pack_answers(answers)
 	
 	#Return output
-	return jsonify([question_data, answer_data])
+	return jsonify([movie_data, question_data, answer_data])
 	
 @app.route('/select-answer', methods=['GET'])
 def select_answer():
