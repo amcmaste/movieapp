@@ -114,6 +114,14 @@ $(document).ready(function() {
 	  } else {
 	    $('#more-questions-button').removeClass('hidden');
 	  }
+	  
+	  // Set view
+	  setTimeout(function() {
+		  
+		  console.log($(document).height());
+		  $("html, body").animate({ scrollTop: ($(document).height()) });
+	  
+	  }, 100);
 	
 	});
 

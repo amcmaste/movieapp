@@ -205,6 +205,14 @@ $(document).ready(function() {
 	  
 	  }
 	  
+	  // Set view
+	  setTimeout(function() {
+		  
+		  console.log($(document).height());
+		  $("html, body").animate({ scrollTop: ($(document).height()) });
+	  
+	  }, 100);
+	  
 	});
 
     // Prevent default action

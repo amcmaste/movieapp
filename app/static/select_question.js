@@ -139,10 +139,14 @@ $(document).ready(function() {
 	  } else {
 	    $('#more-answers-button').removeClass('hidden');
 	  }
+	    
+	  // Set view
+	  setTimeout(function() {
+		  
+		  console.log($(document).height());
+		  $("html, body").animate({ scrollTop: ($(document).height()) });
 	  
-	  	  
-	  //Scroll to bottom of page
-	  /* setTimeout(function(){document.body.scrollTop = document.body.scrollHeight;}, 1000); */
+	  }, 100);
 	
     });
 	
