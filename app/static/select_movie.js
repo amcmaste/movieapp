@@ -63,9 +63,9 @@ $(document).ready(function() {
 	  if (response[1]) {
 		//Calculate height of container
 		let calculated = 50 + 17 + 61 * response[1].length;
-		setTimeout(function(){ $('#question-container').animate({height: calculated}, 200); }, 100);
+		setTimeout(function(){ $('#question-container').animate({height: calculated}, 200); }, 0);
 	    $('#question-container').removeClass('hidden');
-		$('#question-body-container').removeClass('hidden');
+		setTimeout(function(){ $('#question-body-container').removeClass('hidden'); }, 200);
 	  }
 	  
 	  // Set question-1 variables

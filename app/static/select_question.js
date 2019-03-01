@@ -82,8 +82,8 @@ $(document).ready(function() {
 	    // Expand answer containers
         let calculated = 50 + 17 + 61 * response[2].length;
 	    $('#answer-container').removeClass('hidden');
-        $('#answer-body-container').removeClass('hidden');
-		setTimeout(function() { $('#answer-container').animate({height: calculated}, 200); }, 100);
+        setTimeout(function(){ $('#answer-body-container').removeClass('hidden'); }, 200);
+		setTimeout(function() { $('#answer-container').animate({height: calculated}, 200); }, 0);
 	  
 	    // Populate individual answers
 	    if (response[2][0]) {

@@ -82,7 +82,7 @@ $(document).ready(function() {
         let calculated = 50 + 17 + 61 * response[2].length;
 	    $('#answer-container').removeClass('hidden');
         $('#answer-body-container').removeClass('hidden');
-        setTimeout(function() { $('#answer-container').animate({height: calculated}, 200); }, 100);
+        setTimeout(function() { $('#answer-container').animate({height: calculated}, 200); }, 0);
 	  
 	    // Populate individual answers
         $('.answer-content').each(function(i, obj) {
