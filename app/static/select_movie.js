@@ -45,7 +45,7 @@ $(document).ready(function() {
 	  //If movies are returned
 	  if (response[0]) {
 		// Adjust movie containers
-		$('#movie-container').animate({height: '226px'}, 500);
+		$('#movie-container').animate({height: '266px'}, 500);
 		$('#movie-toggle').removeClass('hidden');
 		
 		// Set movie variables
