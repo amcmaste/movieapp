@@ -21,6 +21,8 @@ $(document).ready(function() {
 	  
 	  } else {
 	
+        $('#username').val('');
+		$('#password').val('');
         $('#no-user-toggle').addClass('hidden');
 		$('#user-toggle').removeClass('hidden');
 		$('#user-username').html(response.user);

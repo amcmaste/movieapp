@@ -14,6 +14,10 @@ $(document).ready(function() {
 	.done(function(response) {
        
 	  if (response) {
+		
+		// Clear form fields
+		$('#title').val('');
+		
 		// Reset movie variables (clean-slate)
 		$('#no-movie-toggle').addClass('hidden');
 		$('#movie-toggle').addClass('hidden');
