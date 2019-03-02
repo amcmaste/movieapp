@@ -139,7 +139,8 @@ $(document).ready(function() {
 	  } else {
 	    $('#more-answers-button').removeClass('hidden');
 	  }
-	    
+	  
+	  /*
 	  // Set view
 	  setTimeout(function() {
 		  
@@ -147,7 +148,8 @@ $(document).ready(function() {
 		  $("html, body").animate({ scrollTop: ($(document).height()) });
 	  
 	  }, 200);
-	
+	  */
+	  
     });
 	
   });

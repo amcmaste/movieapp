@@ -115,6 +115,7 @@ $(document).ready(function() {
 	    $('#more-questions-button').removeClass('hidden');
 	  }
 	  
+	  /*
 	  // Set view
 	  setTimeout(function() {
 		  
@@ -122,7 +123,8 @@ $(document).ready(function() {
 		  $("html, body").animate({ scrollTop: ($(document).height()) });
 	  
 	  }, 200);
-	
+	  */
+	  
 	});
 
     // Prevent default action

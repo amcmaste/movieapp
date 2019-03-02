@@ -8,10 +8,10 @@ body {
 .widget {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
-  height: auto;
+  height: 1260px;
   padding-top: 50px;
   padding-bottom: 50px;
 }
@@ -185,6 +185,7 @@ body {
 #user-container {
   height: 288px;
   margin: 10px;
+  margin-top: 20px;
 }
 
 

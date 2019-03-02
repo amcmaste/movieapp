@@ -148,7 +148,8 @@ $(document).ready(function() {
 	  } else {
 	    $('#more-questions-button').removeClass('hidden');
 	  }
-	    
+	  
+	  /*
 	  // Set view
 	  setTimeout(function() {
 		  
@@ -156,6 +157,7 @@ $(document).ready(function() {
 		  $("html, body").animate({ scrollTop: ($(document).height()) });
 	  
 	  }, 200);
+	  */
 	
 	});
 

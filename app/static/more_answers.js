@@ -205,6 +205,7 @@ $(document).ready(function() {
 	  
 	  }
 	  
+	  /*
 	  // Set view
 	  setTimeout(function() {
 		  
@@ -212,6 +213,7 @@ $(document).ready(function() {
 		  $("html, body").animate({ scrollTop: ($(document).height()) });
 	  
 	  }, 200);
+	  */
 	  
 	});
 
