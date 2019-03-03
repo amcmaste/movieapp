@@ -4,7 +4,7 @@ from flask_login import current_user, login_user,logout_user
 from app import app
 from app.forms import LoginForm, SignupForm, ProfileForm, SelectMovieForm, MovieForm, QuestionForm, AnswerForm
 from app.functions import write_user, write_profile, write_movie, write_question, write_answer, pack_movie, pack_questions, pack_answers
-from app.models import User, Movie, Question, Answer
+from app.models import User, Movie, Question, Answer, QuestionVotes, AnswerVotes
 from app import db
 
 #Route defintions
@@ -259,70 +259,110 @@ def more_answers():
 	
 @app.route('/upvote-question', methods=['POST'])
 def upvote_question():
+	user = request.form.get('user')
 	number = request.form.get('number')
+	user = User.query.filter_by(username=user).first()
 	question = Question.query.filter_by(id=number).first()
-	
+	vote = QuestionVotes.query.filter_by(user_id=user.id, question_id=question.id).first()
+		
 	if not question.points:
 		points = 0
 	else:
 		points = question.points
 	
-	question.points = points + 1
-	db.session.commit()
+	if vote == None:
+		vote = QuestionVotes(user_id=user.id, question_id=number)
+		db.session.add(vote)
+		db.session.commit()
+		question.points = points + 1
+		db.session.commit()
+		counted = 'Y'
+	else:
+		counted = 'N'
 	
 	new = Question.query.filter_by(id=number).first()
-	return jsonify([number, new.points])
+	return jsonify([number, new.points, counted])
 	
 @app.route('/downvote-question', methods=['POST'])
 def downvote_question():
+	user = request.form.get('user')
 	number = request.form.get('number')
+	user = User.query.filter_by(username=user).first()
 	question = Question.query.filter_by(id=number).first()
-	
+	vote = QuestionVotes.query.filter_by(user_id=user.id, question_id=question.id).first()
+		
 	if not question.points:
 		points = 0
 	else:
 		points = question.points
 	
-	if question.points > 0:
-		question.points = points - 1
+	if vote == None:
+		vote = QuestionVotes(user_id=user.id, question_id=number)
+		db.session.add(vote)
+		db.session.commit()
+		if points > 1:
+			question.points = points - 1
+		else:
+			question.points = 0
+		db.session.commit()
+		counted = 'Y'
 	else:
-		question.points = 0
-	db.session.commit()
+		counted = 'N'
 	
 	new = Question.query.filter_by(id=number).first()
-	return jsonify([number, new.points])
+	return jsonify([number, new.points, counted])
 	
 @app.route('/upvote-answer', methods=['POST'])
 def upvote_answer():
+	user = request.form.get('user')
 	number = request.form.get('number')
+	user = User.query.filter_by(username=user).first()
 	answer = Answer.query.filter_by(id=number).first()
-	
+	vote = AnswerVotes.query.filter_by(user_id=user.id, answer_id=answer.id).first()
+		
 	if not answer.points:
 		points = 0
 	else:
 		points = answer.points
 	
-	answer.points = points + 1
-	db.session.commit()
+	if vote == None:
+		vote = AnswerVotes(user_id=user.id, answer_id=number)
+		db.session.add(vote)
+		db.session.commit()
+		answer.points = points + 1
+		db.session.commit()
+		counted = 'Y'
+	else:
+		counted = 'N'
 	
 	new = Answer.query.filter_by(id=number).first()
-	return jsonify([number, new.points])
+	return jsonify([number, new.points, counted])
 	
 @app.route('/downvote-answer', methods=['POST'])
 def downvote_answer():
+	user = request.form.get('user')
 	number = request.form.get('number')
+	user = User.query.filter_by(username=user).first()
 	answer = Answer.query.filter_by(id=number).first()
-	
+	vote = AnswerVotes.query.filter_by(user_id=user.id, answer_id=answer.id).first()
+		
 	if not answer.points:
 		points = 0
 	else:
 		points = answer.points
 	
-	if answer.points > 0:
-		answer.points = points - 1
+	if vote == None:
+		vote = AnswerVotes(user_id=user.id, answer_id=number)
+		db.session.add(vote)
+		db.session.commit()
+		if points > 1:
+			answer.points = points - 1
+		else:
+			answer.points = 0
+		db.session.commit()
+		counted = 'Y'
 	else:
-		answer.points = 0
-	db.session.commit()
+		counted = 'N'
 	
 	new = Answer.query.filter_by(id=number).first()
-	return jsonify([number, new.points])
+	return jsonify([number, new.points, counted])

@@ -60,7 +60,7 @@ $(document).ready(function() {
 	  }
 	  
 	  // Prepare and adjust question containers
-	  if (response[1]) {
+	  if (response[1] && response[1].length > 0) {
 		//Calculate height of container
 		let calculated = 50 + 17 + 61 * response[1].length;
 		setTimeout(function(){ $('#question-container').animate({height: calculated}, 200); }, 0);
