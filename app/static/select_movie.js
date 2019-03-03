@@ -56,7 +56,14 @@ $(document).ready(function() {
 		$('#movie-title').html(response[0].movie_title);
 		$('#directed-by').html(response[0].directed_by);
 		$('#released-on').html(response[0].release_date);
-		$('#movie-points-count').html(response[0].points)
+		$('#movie-points-count').html(response[0].points);
+		
+		// Set image path if available
+		if (response[0].path_to_img) {
+			
+		  $('#movie-img').attr('src', response[0].path_to_img);
+		  
+		}
 	  }
 	  
 	  // Prepare and adjust question containers

@@ -23,8 +23,8 @@ def write_profile(favorite):
 	result = User.query.filter_by(username=current_user.username).first()
 	return str(result.favorite)
 
-def write_movie(title):
-	movie = Movie(movie_title=title)
+def write_movie(title, path):
+	movie = Movie(movie_title=title, path_to_img=path)
 	db.session.add(movie)
 	db.session.commit()
 	

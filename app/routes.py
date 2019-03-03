@@ -1,4 +1,5 @@
 #Imports
+import os
 from flask import render_template, request, redirect, url_for, jsonify
 from flask_login import current_user, login_user,logout_user
 from app import app
@@ -22,9 +23,16 @@ def profile():
 	profile = ProfileForm()
 	return render_template('editprofile.html', form=profile)
 	
-@app.route('/add-movie', methods=['GET'])
+@app.route('/add-movie', methods=['GET', 'POST'])
 def movie():
 	movie = MovieForm()
+	if movie.validate_on_submit():
+		title = movie.title.data
+		image = movie.cover.data
+		full_path = app.root_path + '/static/uploads/' + title + '.jpg'
+		partial_path = '/static/uploads/' + title + '.jpg'
+		image.save(full_path)
+		confirmation = write_movie(title, partial_path)
 	return render_template('addmovie.html', form=movie)
 	
 @app.route('/add-question', methods=['GET'])
@@ -46,11 +54,6 @@ def submit_user():
 @app.route('/modify-profile', methods=['GET', 'POST'])
 def modify_profile():
 	confirmation = write_profile(request.form['favorite'])
-	return confirmation
-	
-@app.route('/submit-movie', methods=['GET', 'POST'])
-def submit_movie():
-	confirmation = write_movie(request.form['title'])
 	return confirmation
 	
 @app.route('/submit-question', methods=['GET', 'POST'])
