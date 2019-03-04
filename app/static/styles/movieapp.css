@@ -285,6 +285,85 @@ body {
   grid-template-rows: 1fr;
 }
 
+#select-movie-container {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
+}
+
+#select-movie-container {
+  padding-left: 10px;
+}
+
+#top-movies {
+  height: 130px;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 15px;
+  margin-left: 10px;
+  margin-right: 30px;
+  border: 4px solid rgb(242, 244, 247);
+  border-radius: 5px;
+  color: rgb(46, 46, 46);
+  font-weight: bold;
+  flex: 1;
+}
+
+.top-num {
+  color: rgb(46, 46, 46);
+  display: inline-block;
+  font-size: 0.8em;
+}
+
+
+#rated-first {
+  margin-left: 2px;
+}
+
+#rated-second {
+  margin-left: 2px;
+}
+
+#rated-third {
+  margin-left: 2px;
+}
+
+#rated-fourth {
+  margin-left: 2px;
+}
+
+#rated-fifth {
+  margin-left: 2px;
+}
+
+.top-movies {
+  color: hsl(170, 100%, 30%);
+  text-decoration: none;
+}
+
+.top-movies:link {
+  text-decoration: none;
+}
+
+.top-movies:visited {
+  text-decoration: none;
+}
+
+.top-movies:hover {
+  text-decoration: none;
+}
+
+.top-movies:active {
+  text-decoration: none;
+}
+
 /* Main Template - ABOUT YOU - PROFILE PHOTO */
 
 .profile-photo {

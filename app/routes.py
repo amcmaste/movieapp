@@ -101,9 +101,10 @@ def main():
 	movie = ''
 	questions = ''
 	answers = ''
+	top = ['Jurassic Park', 'Star Wars', 'Ghost Busters', 'Titanic', 'Clue']
 	
 	#Initial page render
-	return render_template('main.html', login=login, select=select, user=user, movie=movie, questions=questions, answers=answers)
+	return render_template('main.html', login=login, select=select, user=user, movie=movie, questions=questions, answers=answers, top=top)
 
 #Select Movie helper function
 @app.route('/select-movie', methods=['GET'])

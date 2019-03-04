@@ -89,10 +89,18 @@
 		  </div>
 	    </div>
 	  </div>
-	  <div class="body-container">
-        <div id="right-inner" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	  <div id="select-movie-container" class="body-container">
+        <div id="right-inner">
           {{ wtf.quick_form(select, button_map={'movie-submit':'primary'}, id="select-movie-form") }}
         </div>
+		<div id="top-movies">
+		  <p>Top Movies</p>
+		  <span class="top-num">1. <a id="rated-first" class="top-movies" href="javascript: void(0)">{{  top[0]  }}</a></span>
+		  <span class="top-num">2. <a id="rated-second" class="top-movies" href="javascript: void(0)">{{  top[1]  }}</a></span>
+		  <span class="top-num">3. <a id="rated-third" class="top-movies" href="javascript: void(0)">{{  top[2]  }}</a></span>
+		  <span class="top-num">4. <a id="rated-fourth" class="top-movies" href="javascript: void(0)">{{  top[3]  }}</a></span>
+		  <span class="top-num">5. <a id="rated-fifth" class="top-movies" href="javascript: void(0)">{{  top[4]  }}</a></span>
+		</div>
 	  </div>
 	</div>
     <div id="movie-toggle" class="movie-toggle hidden">
@@ -384,6 +392,7 @@
   <script type=text/javascript src="{{ url_for('static', filename='login.js') }}"></script>
   <script type=text/javascript src="{{ url_for('static', filename='logout.js') }}"></script>
   <script type=text/javascript src="{{ url_for('static', filename='change_movie.js') }}"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='top_movies.js') }}"></script>
   <script type=text/javascript src="{{ url_for('static', filename='select_movie.js') }}"></script>
   <script type=text/javascript src="{{ url_for('static', filename='select_question.js') }}"></script>
   <script type=text/javascript src="{{ url_for('static', filename='select_answer.js') }}"></script>
