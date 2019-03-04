@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     $.ajax({
       data : {
-        title : $('#title').val(),
+        title : $('#movie-title').text(),
       },
       type : 'GET',
       url : '/select-movie'
