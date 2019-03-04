@@ -102,13 +102,8 @@ def main():
 	movie = ''
 	questions = ''
 	answers = ''
-	movies = db.session.query(Answer.movie_id, func.sum(Answer.points).label('total_points')).group_by(Answer.movie_id).order_by('total_points desc').limit(5).all()
-	first = Movie.query.filter_by(id=movies[0][0]).first().movie_title
-	second = Movie.query.filter_by(id=movies[1][0]).first().movie_title
-	third = Movie.query.filter_by(id=movies[2][0]).first().movie_title
-	fourth = Movie.query.filter_by(id=movies[3][0]).first().movie_title
-	fifth = Movie.query.filter_by(id=movies[4][0]).first().movie_title
-	top = [first, second, third, fourth, fifth]
+	top = ['', '', '', '', '']
+	
 	#Initial page render
 	return render_template('main.html', login=login, select=select, user=user, movie=movie, questions=questions, answers=answers, top=top)
 
