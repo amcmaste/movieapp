@@ -389,6 +389,7 @@
 
 {% block scripts %}
 {{ super() }}
+  <script type=text/javascript src="{{ url_for('static', filename='check_login.js') }}"></script>
   <script type=text/javascript src="{{ url_for('static', filename='login.js') }}"></script>
   <script type=text/javascript src="{{ url_for('static', filename='logout.js') }}"></script>
   <script type=text/javascript src="{{ url_for('static', filename='change_movie.js') }}"></script>

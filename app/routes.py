@@ -66,8 +66,7 @@ def submit_question():
 def submit_answer():
 	confirmation = write_answer(request.form['title'], request.form['question'], request.form['answer'])
 	return confirmation
-	
-#New JavaScript login logic
+
 @app.route('/login', methods=['POST'])
 def login():
 
@@ -80,6 +79,16 @@ def login():
 	else:
 		login_user(user)
 		return jsonify({'user': user.username, 'fav_movie': user.fav_movie, 'user_since': user.join_datetime, 'points': user.points})
+
+@app.route('/check-login', methods=['POST'])
+def check_login():
+
+	username = request.form.get('user')
+	user = User.query.filter_by(username=username).first()
+	if user.username == current_user.username:
+		return 'Logged In'
+	else:
+		return 'Not Logged In'
 	
 @app.route('/logout', methods=['POST'])
 def logout():
