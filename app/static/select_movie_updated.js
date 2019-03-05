@@ -9,7 +9,7 @@ $(document).ready(function() {
       
 	  },
       type : 'GET',
-      url : 'http://www.omdbapi.com/?apikey=227f7057&'
+      url : 'https://www.omdbapi.com/?apikey=227f7057&'
     })
 	.done(function(response) {
       
