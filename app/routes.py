@@ -148,7 +148,9 @@ def select_movie_updated():
 		db.session.add(movie)
 		db.session.commit()
 		
+		
 	#Pack and return Movie data
+	movie = Movie.query.filter_by(imdb_id=imdb).first()
 	movie_data = pack_movie(movie)
 	
 	#Pack and return Question data
