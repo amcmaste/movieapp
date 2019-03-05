@@ -42,6 +42,7 @@ class Movie(db.Model):
 	query_class = MovieQuery
 	__tablename__ = 'movie'
 	id = db.Column(db.Integer, primary_key=True)
+	imdb_id = db.Column(db.String(128), index= True, unique=True)
 	movie_title = db.Column(db.Unicode(255), index=True, unique=True)
 	path_to_img = db.Column(db.String(128))
 	directed_by = db.Column(db.String(128))

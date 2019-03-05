@@ -56,15 +56,8 @@ def write_answer(title, question, text):
 def pack_movie(movie):
 	return {
 	'id' : movie.id,
-	'movie_title' : movie.movie_title,
-	'path_to_img' : movie.path_to_img,
-	'directed_by' : movie.directed_by,
-	'summary_text' : movie.summary_text,
-	'release_date' : movie.release_date,
-	'create_datetime' : movie.create_datetime,
-	'points' : movie.points,
-	'level' : movie.level,
-	'badge' : movie.badge
+	'imdb' : movie.imdb_id,
+	'title' : movie.movie_title
 	}
 	
 def pack_questions(questions):

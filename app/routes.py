@@ -107,7 +107,6 @@ def main():
 	#Initial page render
 	return render_template('main.html', login=login, select=select, user=user, movie=movie, questions=questions, answers=answers, top=top)
 
-#Select Movie helper function
 @app.route('/select-movie', methods=['GET'])
 def select_movie():
 	#Initialize variables
@@ -130,6 +129,38 @@ def select_movie():
 	#Pull and package answer data
 	
 	#Return output
+	return jsonify([movie_data, question_data, answer_data])
+
+@app.route('/select-movie-updated', methods=['GET'])
+def select_movie_updated():
+	#Un-pack variables
+	imdb = request.args.get('imdb')
+	title = request.args.get('title')
+	
+	#Check if movie is already in database
+	movie = Movie.query.filter_by(imdb_id=imdb).first()
+	
+	#If not, add movie to database
+	if movie:
+		pass
+	else:
+		movie = Movie(imdb_id=imdb, movie_title=title)
+		db.session.add(movie)
+		db.session.commit()
+		
+	#Pack and return Movie data
+	movie_data = pack_movie(movie)
+	
+	#Pack and return Question data
+	questions = Question.query.filter_by(movie_id=movie.id).order_by('points desc').limit(5).all()
+	if not isinstance(questions, list):
+		questions = [questions]
+	question_data = pack_questions(questions)
+	
+	#Pack and return Answer data
+	answer_data = None
+	
+	#Return
 	return jsonify([movie_data, question_data, answer_data])
 	
 @app.route('/select-question', methods=['GET'])
