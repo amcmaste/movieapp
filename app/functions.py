@@ -76,8 +76,7 @@ def pack_questions(questions):
 			'create_datetime' : question.create_datetime,
 			'points' : question.points,
 			'level' : question.level,
-			'badge' : question.badge,
-			'top' : question.top
+			'badge' : question.badge
 		}
 		output.append(packed)
 	return output
@@ -99,8 +98,7 @@ def pack_answers(answers):
 			'create_datetime' : answer.create_datetime,
 			'points' : answer.points,
 			'level' : answer.level,
-			'badge' : answer.badge,
-			'top' : answer.top
+			'badge' : answer.badge
 		}
 		output.append(packed)
 	return output

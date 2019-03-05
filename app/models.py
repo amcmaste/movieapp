@@ -61,12 +61,11 @@ class Question(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	user_id = db.Column(db.Integer, db.ForeignKey('user.id'), index=True)
 	movie_id = db.Column(db.Integer, db.ForeignKey('movie.id'), index=True)
-	question_text = db.Column(db.Text, unique=True)
+	question_text = db.Column(db.Text)
 	create_datetime = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 	points = db.Column(db.Integer, index=True, default=0)
 	level = db.Column(db.Integer, default=0)
 	badge = db.Column(db.String(128))
-	top = db.Column(db.Boolean, default=0)
 	answers = db.relationship('Answer', backref='question_referenced_by_answer', lazy='dynamic')
 	question_votes = db.relationship('QuestionVotes', backref='question_voted_on', lazy='dynamic')
 
@@ -75,12 +74,11 @@ class Answer(db.Model):
 	user_id = db.Column(db.Integer, db.ForeignKey('user.id'), index=True)
 	movie_id = db.Column(db.Integer, db.ForeignKey('movie.id'), index=True)
 	question_id = db.Column(db.Integer, db.ForeignKey('question.id'), index=True)
-	answer_text = db.Column(db.Text, unique=True)
+	answer_text = db.Column(db.Text)
 	create_datetime = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 	points = db.Column(db.Integer, index=True, default=0)
 	level = db.Column(db.Integer, default=0)
 	badge = db.Column(db.String(128))
-	top = db.Column(db.Boolean, default=0)
 	answer_votes = db.relationship('AnswerVotes', backref='answer_voted_on', lazy='dynamic')
 	
 class QuestionVotes(db.Model):
