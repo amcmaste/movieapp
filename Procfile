@@ -1,1 +1,1 @@
-web: gunicorn movieapp:app
+web: flask db upgrade; gunicorn movieapp:app
