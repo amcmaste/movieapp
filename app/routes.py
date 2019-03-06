@@ -23,7 +23,7 @@ def signup():
 def profile():
 	profile = ProfileForm()
 	return render_template('editprofile.html', form=profile)
-	
+
 @app.route('/add-movie', methods=['GET', 'POST'])
 def movie():
 	movie = MovieForm()

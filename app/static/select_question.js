@@ -26,6 +26,7 @@ $(document).ready(function() {
         $('#question-body-container').addClass('hidden');
         $('.question-content').removeClass('featured-content');
         $('#expand-questions-button').addClass('hidden');
+		$('#add-question-button').addClass('hidden');
         $('#q1-container').addClass('hidden');
         $('#q2-container').addClass('hidden');
         $('#q3-container').addClass('hidden');
@@ -37,6 +38,7 @@ $(document).ready(function() {
         $('#answer-body-container').addClass('hidden');
         $('.answer-content').removeClass('featured-content');
         $('#expand-answers-button').addClass('hidden');
+		$('#add-answer-button').addClass('hidden');
         $('#a1-container').addClass('hidden');
         $('#a2-container').addClass('hidden');
         $('#a3-container').addClass('hidden');
@@ -71,8 +73,9 @@ $(document).ready(function() {
 	  
 	    });
 	  
-	    // Set "Expand Questions" button status
+	    // Set "Expand Questions" and "Add Questions" button status
         $('#expand-questions-button').removeClass('hidden');
+		$('#add-question-button').removeClass('hidden');
       
 	  }
 	
@@ -123,6 +126,7 @@ $(document).ready(function() {
 	  
 	    // Set "Expand Answers" button status
         $('#expand-answers-button').addClass('hidden');
+		$('#add-answer-button').removeClass('hidden');
 	  
 	  }
 	  

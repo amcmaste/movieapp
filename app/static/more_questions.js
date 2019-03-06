@@ -28,6 +28,8 @@ $(document).ready(function() {
 		$('#question-body-container').addClass('hidden');
 		$('.question-content').removeClass('featured-content');
 		$('#expand-questions-button').addClass('hidden');
+		$('#add-question-button').addClass('hidden');
+		$('#add-answer-button').addClass('hidden');
 		$('#q1-container').addClass('hidden');
 		$('#q2-container').addClass('hidden');
 		$('#q3-container').addClass('hidden');
@@ -98,6 +100,9 @@ $(document).ready(function() {
 	    $('#question-container').removeClass('hidden');
 		setTimeout(function(){ $('#question-body-container').removeClass('hidden'); }, 200);
 	  }
+	  
+	  // Set "Add Questions" button status
+      $('#add-question-button').removeClass('hidden');
 	  
 	  // Set question-1 variables
 	  if (response[1][0]) {

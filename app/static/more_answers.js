@@ -26,8 +26,9 @@ $(document).ready(function() {
 		// Reset question variables (clean-slate)
 		$('#question-container').addClass('hidden');
 		$('#question-body-container').addClass('hidden');
-		/* $('.question-content').removeClass('featured-content'); */
 		$('#expand-questions-button').addClass('hidden');
+		$('#add-question-button').addClass('hidden');
+		$('#add-answer-button').addClass('hidden');
 		$('#q1-container').addClass('hidden');
 		$('#q2-container').addClass('hidden');
 		$('#q3-container').addClass('hidden');
@@ -99,6 +100,9 @@ $(document).ready(function() {
 		$('#question-body-container').removeClass('hidden');
 	  }
 	  
+	  // Set "Add Questions" button status
+      $('#add-question-button').removeClass('hidden');
+	  
 	  // Set question-1 variables
 	  if (response[1][0]) {
         $('#q1-container').removeClass('hidden');
@@ -141,6 +145,7 @@ $(document).ready(function() {
 	    
 	  // Set "Expand Questions" button status
       $('#expand-questions-button').removeClass('hidden');
+	  $('#add-question-button').removeClass('hidden');
 	  
 	  // Set "More Questions" button status
 	  if (response[1].length < 5) {
@@ -156,6 +161,9 @@ $(document).ready(function() {
 	    $('#answer-container').removeClass('hidden');
         setTimeout(function(){ $('#answer-body-container').removeClass('hidden'); }, 200);
 		setTimeout(function() { $('#answer-container').animate({height: calculated}, 200); }, 0);
+		
+		// Set "Add Answers" button status
+        $('#add-answers-button').removeClass('hidden');
 	  
 	    // Populate individual answers
 	    if (response[2][0]) {
