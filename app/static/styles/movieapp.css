@@ -140,6 +140,18 @@ body {
   border-color: hsl(170, 100%, 30%);
   color: white;
 }
+
+#question-submit {
+  background-color: hsl(170, 100%, 30%);
+  border-color: hsl(170, 100%, 30%);
+  color: white;
+}
+  
+#answer-submit {
+  background-color: hsl(170, 100%, 30%);
+  border-color: hsl(170, 100%, 30%);
+  color: white;
+}
   
 #photo-img {
   /* box-shadow: -10px 10px 20px -5px #595959; */

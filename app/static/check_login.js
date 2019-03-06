@@ -1,26 +1,30 @@
-let user = $('#user-username').text();
-  
-if (user) {
+window.onload = function() {
 
-  $.ajax({
-    data : {
-		  
-      user : user
-      
-	},
-    type : 'POST',
-    url : '/check-login'
-  })
-  .done(function(response) {
+  let user = $('#user-username').text();
     
-	if (response == 'Logged In') {
-	
-      $('#no-user-toggle').addClass('hidden');
-      $('#user-toggle').removeClass('hidden');
-	  $('#user-container').css('height', '228px');
-	
-	} else {}
-	
-  });
+  if (user) {
   
-} else {}
+    $.ajax({
+      data : {
+  		  
+        user : user
+        
+  	},
+      type : 'POST',
+      url : '/check-login'
+    })
+    .done(function(response) {
+      
+  	  if (response == 'Logged In') {
+  	
+        $('#no-user-toggle').addClass('hidden');
+        $('#user-toggle').removeClass('hidden');
+  	    $('#user-container').css('height', '228px');
+  	
+  	  } else {}
+  	
+    });
+    
+  } else {}
+
+}

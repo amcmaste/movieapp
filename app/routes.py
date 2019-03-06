@@ -306,6 +306,27 @@ def more_answers():
 	#Return output
 	return jsonify([movie_data, question_data, answer_data, page])
 	
+@app.route('/add-question-content', methods=['GET'])
+def add_question_content():
+	user = request.args.get('user')
+	movie = request.args.get('movie')
+	question = request.args.get('question')
+	
+	userid = User.query.filter_by(username=user).first().id
+	movieid = Movie.query.filter_by(movie_title=movie).first().id
+	check_question = Question.query.filter_by(user_id=userid, movie_id=movieid, question_text=question).first()
+	
+	if check_question:
+		pass
+	else:
+		new_question = Question(user_id=userid, movie_id=movieid, question_text=question)
+		db.session.add(new_question)
+		db.session.commit()
+		
+	verify_question = Question.query.filter_by(user_id=userid, movie_id=movieid, question_text=question).first()
+
+	return str(verify_question.question_text)
+	
 @app.route('/upvote-question', methods=['POST'])
 def upvote_question():
 	user = request.form.get('user')

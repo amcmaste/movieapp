@@ -118,7 +118,7 @@
 	      <div class="header-right-text">
 		    <a id="change-movie-button" role="button" href="javascript: void(0)" 
 		    class="btn btn-primary btn-sm add-button minor-button">Change Movie</a>
-			<a id="add-question-button" role="button" href="{{ url_for('question') }}"
+			<a id="add-question-button" role="button" href="javascript: void(0)"
 		    class="btn btn-primary btn-sm add-button minor-button">Add Question</a>
 		  </div>
 	    </div>
@@ -192,7 +192,7 @@
 		  class="btn btn-primary btn-sm add-button minor-button expand-button hidden">Show Questions</a>
 		  <a id="more-questions-button" role="button" href="javascript: void(0)" 
 		  class="btn btn-primary btn-sm add-button minor-button">More Questions</a>
-		  <a id="add-answer-button" role="button" href="{{ url_for('answer') }}"
+		  <a id="add-answer-button" role="button" href="javascript: void(0)"
 		  class="btn btn-primary btn-sm add-button minor-button">Add Answer</a>
 		</div>
 	  </div>
@@ -454,6 +454,8 @@
   <script type=text/javascript src="{{ url_for('static', filename='more_questions.js') }}"></script>
   <script type=text/javascript src="{{ url_for('static', filename='more_answers.js') }}"></script>
   <script type=text/javascript src="{{ url_for('static', filename='add_question.js') }}"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='add_question_content.js') }}"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='add_answer_content.js') }}"></script>
   <script type=text/javascript src="{{ url_for('static', filename='add_answer.js') }}"></script>
   <script type=text/javascript src="{{ url_for('static', filename='upvote_question.js') }}"></script>
   <script type=text/javascript src="{{ url_for('static', filename='downvote_question.js') }}"></script>

@@ -34,8 +34,8 @@ class MovieForm(FlaskForm):
 
 class QuestionForm(FlaskForm):
 	question = TextAreaField('Question', id="question", validators=[DataRequired()])
-	submit = SubmitField('Submit', id="submit")
+	submit = SubmitField('Submit', id="question-submit")
 	
 class AnswerForm(FlaskForm):
 	answer = TextAreaField('Answer', id="answer", validators=[DataRequired()])
-	submit = SubmitField('Submit', id="submit")
+	submit = SubmitField('Submit', id="answer-submit")
