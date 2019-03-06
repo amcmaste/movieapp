@@ -118,6 +118,8 @@
 	      <div class="header-right-text">
 		    <a id="change-movie-button" role="button" href="javascript: void(0)" 
 		    class="btn btn-primary btn-sm add-button minor-button">Change Movie</a>
+			<a id="add-question-button" role="button" href="{{ url_for('question') }}"
+		    class="btn btn-primary btn-sm add-button minor-button">Add Question</a>
 		  </div>
 	    </div>
 	  </div>
@@ -168,8 +170,8 @@
 		  class="btn btn-primary btn-sm add-button minor-button expand-button hidden">Show Questions</a>
 		  <a id="more-questions-button" role="button" href="javascript: void(0)" 
 		  class="btn btn-primary btn-sm add-button minor-button">More Questions</a>
-		  <a id="add-question-button" role="button" href="{{ url_for('question') }}"
-		  class="btn btn-primary btn-sm add-button minor-button">Add Question</a>
+		  <a id="add-answer-button" role="button" href="{{ url_for('answer') }}"
+		  class="btn btn-primary btn-sm add-button minor-button">Add Answer</a>
 		</div>
 	  </div>
 	</div>
@@ -288,8 +290,6 @@
 		  class="btn btn-primary btn-sm add-button minor-button expand-button hidden">Show Answers</a>
 		  <a id="more-answers-button" role="button" href="javascript: void(0)" 
 		  class="btn btn-primary btn-sm add-button minor-button">More Answers</a>
-		  <a id="add-answer-button" role="button" href="{{ url_for('answer') }}"
-		  class="btn btn-primary btn-sm add-button minor-button">Add Answer</a>
 		</div>
 	  </div>
 	</div>
