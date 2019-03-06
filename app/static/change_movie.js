@@ -11,6 +11,7 @@ $(document).ready(function() {
 	$('#question-body-container').addClass('hidden');
 	$('.question-content').removeClass('featured-content');
 	$('#expand-questions-button').addClass('hidden');
+	$('#add-question-container').addClass('hidden');
 	$('#q1-container').addClass('hidden');
 	$('#q2-container').addClass('hidden');
 	$('#q3-container').addClass('hidden');
@@ -22,6 +23,7 @@ $(document).ready(function() {
 	$('#answer-body-container').addClass('hidden');
 	$('.answer-content').removeClass('featured-content');
 	$('#expand-answers-button').addClass('hidden');
+	$('#add-answer-container').addClass('hidden');
 	$('#a1-container').addClass('hidden');
 	$('#a2-container').addClass('hidden');
 	$('#a3-container').addClass('hidden');

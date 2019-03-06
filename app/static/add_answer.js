@@ -1,22 +1,15 @@
 $(document).ready(function() {
 
-  $('form').on('submit', function(event) {
+  $('#add-answer-button').on('click', function(event) {
 
-    $.ajax({
-      data : {
-        title : $('#title').val(),
-		question: $('#question').val(),
-		answer : $('#answer').val()
-      },
-      type : 'POST',
-      url : '/submit-answer'
-    })
-	.done(function(response) {
+	// Clear random elements
+      
+    // Reset question variables (clean-slate)
+	$('#add-question-container').addClass('hidden');
 
-      alert(response + ' added to database')
+    // Reveal add question container
+	$('#add-answer-container').removeClass('hidden');
 	
-	});
-
 	event.preventDefault();
 
   });

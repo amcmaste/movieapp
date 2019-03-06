@@ -107,6 +107,8 @@ def main():
 	#Set variables
 	login = LoginForm()
 	select = SelectMovieForm()
+	add_question = QuestionForm()
+	add_answer = AnswerForm()
 	user = current_user
 	movie = ''
 	questions = ''
@@ -114,7 +116,7 @@ def main():
 	top = ['One', 'Two', 'Three', 'Four', 'Five']
 	
 	#Initial page render
-	return render_template('main.html', login=login, select=select, user=user, movie=movie, questions=questions, answers=answers, top=top)
+	return render_template('main.html', login=login, select=select, user=user, movie=movie, questions=questions, answers=answers, add_question=add_question, add_answer=add_answer, top=top)
 
 @app.route('/select-movie', methods=['GET'])
 def select_movie():

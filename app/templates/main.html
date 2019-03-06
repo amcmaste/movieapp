@@ -155,6 +155,28 @@
     </div>
   </div>
   <!--END MOVIE CONTAINER-->
+  
+  <!--ADD QUESTION CONTAINER-->
+  <div id="add-question-container" class="outer-container hidden">
+    <div class="header-container">
+	    <div class="header-left">
+	      <div class="header-left-text">
+		    <span class="add-question">ADD QUESTION</span>
+		  </div>
+	    </div>
+	    <div class="header-right">
+	      <div class="header-right-text">
+		    <span class="no-movie"></span>
+		  </div>
+	    </div>
+	  </div>
+	  <div id="select-movie-container" class="body-container">
+        <div id="right-inner">
+          {{ wtf.quick_form(add_question, button_map={'movie-submit':'primary'}, id="add-question-form") }}
+        </div>
+	</div>
+  </div>
+  <!--END ADD QUESTION CONTAINER-->
 
   <!--QUESTION CONTAINER-->
   <div id="question-container" class="outer-container hidden">
@@ -275,6 +297,28 @@
 	</div>
   </div>
   <!--END QUESTION CONTAINER-->
+  
+  <!--ADD ANSWER CONTAINER-->
+  <div id="add-answer-container" class="outer-container hidden">
+    <div class="header-container">
+	    <div class="header-left">
+	      <div class="header-left-text">
+		    <span class="add-answer">ADD ANSWER</span>
+		  </div>
+	    </div>
+	    <div class="header-right">
+	      <div class="header-right-text">
+		    <span class="no-movie"></span>
+		  </div>
+	    </div>
+	  </div>
+	  <div id="select-movie-container" class="body-container">
+        <div id="right-inner">
+          {{ wtf.quick_form(add_answer, button_map={'movie-submit':'primary'}, id="add-answer-form") }}
+        </div>
+	</div>
+  </div>
+  <!--END ADD ANSWER CONTAINER-->
   
   <!--ANSWER CONTAINER-->
   <div id="answer-container" class="outer-container hidden">
@@ -409,6 +453,8 @@
   <script type=text/javascript src="{{ url_for('static', filename='expand_answers.js') }}"></script>
   <script type=text/javascript src="{{ url_for('static', filename='more_questions.js') }}"></script>
   <script type=text/javascript src="{{ url_for('static', filename='more_answers.js') }}"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='add_question.js') }}"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='add_answer.js') }}"></script>
   <script type=text/javascript src="{{ url_for('static', filename='upvote_question.js') }}"></script>
   <script type=text/javascript src="{{ url_for('static', filename='downvote_question.js') }}"></script>
   <script type=text/javascript src="{{ url_for('static', filename='upvote_answer.js') }}"></script>

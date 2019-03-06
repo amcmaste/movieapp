@@ -28,8 +28,10 @@ $(document).ready(function() {
 		$('#question-body-container').addClass('hidden');
 		$('.question-content').removeClass('featured-content');
 		$('#expand-questions-button').addClass('hidden');
+		$('#add-question-container').addClass('hidden');
 		$('#add-question-button').addClass('hidden');
 		$('#add-answer-button').addClass('hidden');
+		$('#add-answer-container').addClass('hidden');
 		$('#q1-container').addClass('hidden');
 		$('#q2-container').addClass('hidden');
 		$('#q3-container').addClass('hidden');
