@@ -18,7 +18,7 @@ $(document).ready(function() {
 	  $('#password').val('');
 	  $('#verify').val('');
 	  $('#submit').prop("disabled", true);
-	  alert(response + ', your account has been created. Please login!');
+	  alert("Your account has been created. Please click 'LOGO' then login!");
 	
 	});
 

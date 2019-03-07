@@ -44,7 +44,7 @@
 	    <div class="profile-content">
 	      <div class="profile-username">
 		    <div id="user-username" class="profile-data-header">{{  user.username  }}</div>
-		    <a id="edit-profile-link" href="{{ url_for('profile') }}" >Edit Profile</a>
+		    <a id="edit-profile-link" href="#" >Edit Profile</a>
 		  </div>
 		  <div class="profile-fav-movie">
 		    <div class="profile-data-title">Favorite Movie: </div>
@@ -118,6 +118,8 @@
 	      <div class="header-right-text">
 		    <a id="change-movie-button" role="button" href="javascript: void(0)" 
 		    class="btn btn-primary btn-sm add-button minor-button">Change Movie</a>
+			<a id="reload-movie-button" role="button" href="javascript: void(0)" 
+		    class="btn btn-primary btn-sm add-button minor-button">Reload Movie</a>
 			<a id="add-question-button" role="button" href="javascript: void(0)"
 		    class="btn btn-primary btn-sm add-button minor-button">Add Question</a>
 		  </div>
@@ -130,7 +132,7 @@
 	    <div class="movie-content">
 	      <div class="movie-title">
 		    <div id="movie-title" class="movie-data-header">TITLE</div>
-		    <a id="edit-movie-link" class="hide-movie" href="javascript: void(0)" >Edit Movie</a>
+		    <a id="edit-movie-link" class="hide-movie" href="#" >Edit Movie</a>
 		  </div>
 		  <div class="movie-directed-by">
 		    <div class="movie-data-title">Directed By: </div>
@@ -447,6 +449,7 @@
   <script type=text/javascript src="{{ url_for('static', filename='change_movie.js') }}"></script>
   <script type=text/javascript src="{{ url_for('static', filename='top_movies.js') }}"></script>
   <script type=text/javascript src="{{ url_for('static', filename='select_movie_updated.js') }}"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='reload_movie.js') }}"></script>
   <script type=text/javascript src="{{ url_for('static', filename='select_question.js') }}"></script>
   <script type=text/javascript src="{{ url_for('static', filename='select_answer.js') }}"></script>
   <script type=text/javascript src="{{ url_for('static', filename='expand_questions.js') }}"></script>

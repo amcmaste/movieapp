@@ -18,6 +18,7 @@ $(document).ready(function() {
 	  
 	    $('#username').val('');
 		$('#password').val('');
+		alert('Sorry, that is not a valid login!');
 	  
 	  } else {
 	

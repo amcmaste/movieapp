@@ -327,6 +327,29 @@ def add_question_content():
 
 	return str(verify_question.question_text)
 	
+@app.route('/add-answer-content', methods=['GET'])
+def add_answer_content():
+	user = request.args.get('user')
+	movie = request.args.get('movie')
+	question = request.args.get('question')
+	answer = request.args.get('answer')
+	
+	userid = User.query.filter_by(username=user).first().id
+	movieid = Movie.query.filter_by(movie_title=movie).first().id
+	questionid = Question.query.filter_by(question_text=question).first().id
+	check_answer = Answer.query.filter_by(user_id=userid, movie_id=movieid, question_id=questionid, answer_text=answer).first()
+	
+	if check_answer:
+		pass
+	else:
+		new_answer = Answer(user_id=userid, movie_id=movieid, question_id=questionid, answer_text=answer)
+		db.session.add(new_answer)
+		db.session.commit()
+		
+	verify_answer = Answer.query.filter_by(user_id=userid, movie_id=movieid, question_id=questionid, answer_text=answer).first()
+
+	return str(verify_answer.answer_text)
+	
 @app.route('/upvote-question', methods=['POST'])
 def upvote_question():
 	user = request.form.get('user')

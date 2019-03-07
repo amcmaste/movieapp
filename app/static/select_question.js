@@ -78,11 +78,12 @@ $(document).ready(function() {
 	    // Set "Expand Questions" and "Add Questions" button status
         $('#expand-questions-button').removeClass('hidden');
 		$('#add-question-button').removeClass('hidden');
+		$('#add-answer-button').removeClass('hidden');
       
 	  }
 	
 	  // If answers are returned
-	  if (response[2]) {
+	  if (response[2].length > 0) {
 	  
 	    // Expand answer containers
         let calculated = 50 + 17 + 61 * response[2].length;
@@ -128,7 +129,6 @@ $(document).ready(function() {
 	  
 	    // Set "Expand Answers" button status
         $('#expand-answers-button').addClass('hidden');
-		$('#add-answer-button').removeClass('hidden');
 	  
 	  }
 	  

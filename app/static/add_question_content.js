@@ -19,7 +19,8 @@ $(document).ready(function() {
     })
 	.done(function(response) {
     
-      alert(response);
+	  $('#question').val('');
+      alert('Question added successfully, please reload!');
 	
 	});
 	
